@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+//Remember This  --- >>>>>   Binary search works only in sorted array
 int search(vector<int> &nums, int target)
 {
     int n = nums.size();
