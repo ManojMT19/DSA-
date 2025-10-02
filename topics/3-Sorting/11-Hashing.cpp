@@ -167,7 +167,7 @@ vector<int> twoSum(vector<int> &nums, int target) // Leetcode 1
     }
     return {};
 }
-int findMaxK(vector<int> &nums)
+int findMaxK(vector<int> &nums)//LC 2441
 {
     int m = -1;
     int n = nums.size();
@@ -180,7 +180,7 @@ int findMaxK(vector<int> &nums)
     }
     return m;
 }
-int findmaxk_2(vector<int> &nums)
+int findmaxk_2(vector<int> &nums)// LC 2441
 {
     int maxNum = 0;
     for (int num : nums)
