@@ -100,6 +100,8 @@ int main()
     // cout << x2 << endl;
     // cout << upperbound(l,9)<<endl;
 
+    cout << floor(l , 15);
+
 
 
 
