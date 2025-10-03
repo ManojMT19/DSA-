@@ -39,13 +39,13 @@ void bubble_sort(int arr[], int n)
 }
 void bubbleSort_chatgpt(int arr[], int n)
 {
-    for (int pass = 1; pass <= n - 1; pass++)
+    for (int i = 1; i <= n - 1; i++)
     {
-        for (int i = 0; i < n - pass; i++)
+        for (int j = 0; j < n-i ; j++)
         {
-            if (arr[i] > arr[i + 1])
+            if (arr[j] > arr[j + 1])
             {
-                swap(arr[i], arr[i + 1]);
+                swap(arr[j], arr[j + 1]);
             }
         }
     }
