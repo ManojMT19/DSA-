@@ -98,7 +98,7 @@ vector<int> twoSum_better(vector<int> &nums, int target) // Leetcode 1
         int x = target - a;
         if(m.find(x) != m.end())
         {
-            return{m[x],a};//returnig the index
+            return{m[x],i};//returnig the index
         }
         m[a] = i;
     }
