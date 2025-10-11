@@ -13,7 +13,7 @@ int search_rotated_array(vector<int> &arr, int n, int target)
         // Left sorted
         if (arr[low] <= arr[mid])
         {
-            if (arr[low] <= target && target <= arr[mid])
+            if (arr[low] <= target && target < arr[mid]) //Note < and <= 
             {
                 high = mid - 1;
             }
@@ -25,7 +25,7 @@ int search_rotated_array(vector<int> &arr, int n, int target)
         // Right sorted
         else
         {
-            if (arr[mid] <= target && target <= arr[high])
+            if (arr[mid] < target && target <= arr[high]) //Note < and <= 
             {
                 low = mid + 1;
             }
