@@ -40,7 +40,8 @@ int search_rotated_array(vector<int> &arr, int n, int target)
 int main()
 {
     vector<int> nums{7,8,9,1,2,3,4,5,6};
-    cout << search_rotated_array(nums , 9 , 9);
+    int n = nums.size();
+    cout << search_rotated_array(nums , n , 9);
 
     return 0;
 }
