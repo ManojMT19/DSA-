@@ -39,7 +39,7 @@ vector<int> firstandlast3(vector<int> &arr, int target) // Binary search
     int high = -1;
     int first = 0;
     int last = n - 1;
-    while (first <= last)
+    while (first <= last) // First loop to find first element
     {
         int mid = (first + last) / 2;
         if (arr[mid] >= target)
@@ -56,7 +56,7 @@ vector<int> firstandlast3(vector<int> &arr, int target) // Binary search
     }
     first = 0;
     last = n - 1;
-    while (first <= last)
+    while (first <= last) // Second loop to find last element
     {
         int mid = (first + last) / 2;
         if (arr[mid] <= target)
