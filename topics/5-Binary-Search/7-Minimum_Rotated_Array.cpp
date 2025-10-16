@@ -10,7 +10,7 @@ int minimum(vector<int> &arr)
         int mid = low + (high - low) / 2;  // we use this to avoid integer overflow
 
         //-----------------------------------------------------------------------------
-        // we added this part to work when an array contains duplicate elements also 
+        // we added this part to work when an array contains duplicate elements  also 
         if (arr[low] == arr[mid] && arr[mid] == arr[high])  
         {
             low = low + 1;
