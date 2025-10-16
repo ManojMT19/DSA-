@@ -3,16 +3,21 @@ using namespace std;
 int minimum(vector<int> &arr)
 {
     int n = arr.size();
-    int low = 0 , high = n-1 , ans = INT_FAST32_MAX;
+    int low = 0 , high = n-1 , ans = INT_MAX;
     while (low <= high)
     {
-        int mid = (low + high) / 2;
+        //int mid = (low + high) / 2;
+        int mid = low + (high - low) / 2;  // we use this to avoid integer overflow
 
-        if (arr[low] <= arr[high])
+        //-----------------------------------------------------------------------------
+        // we added this part to work when an array contains duplicate elements also 
+        if (arr[low] == arr[mid] && arr[mid] == arr[high])  
         {
-            ans = min(ans, arr[low]);
-            break;
+            low = low + 1;
+            high = high - 1;
+            continue;
         }
+        //------------------------------------------------------------------------------
         
         if (arr[low] <= arr[mid])
         { 
@@ -29,7 +34,7 @@ int minimum(vector<int> &arr)
 }
 int main()
 {
-    vector<int> nums {4,5,6,7,8,9,-1,1,2};
+    vector<int> nums {4,5,6,6,7,7,7,8,9,1,1,1,1,2};
     cout << minimum(nums);
 
 
