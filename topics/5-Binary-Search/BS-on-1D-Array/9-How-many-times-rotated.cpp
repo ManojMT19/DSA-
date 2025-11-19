@@ -2,6 +2,10 @@
 using namespace std;
 int how_many_rotated(vector<int> arr)
 {
+
+    // This code works because the index of the minimum element is equal to the number of times the array was rotated.
+    // This works when  array is rotated right side or Clockwise 
+
     int n = arr.size();
     int low = 0;
     int high = n-1;

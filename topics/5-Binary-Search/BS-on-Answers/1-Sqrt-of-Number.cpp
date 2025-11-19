@@ -3,7 +3,7 @@ using namespace std;
 int sqrt_brute(int n )
 {
     int sqrt = -1;
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++) 
     {
         if (i*i <= n)
         {

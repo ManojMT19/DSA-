@@ -178,7 +178,7 @@ vector<int> union_of_array_optimal(vector<int> arr1, vector<int> arr2)
     }
     return unionArr;
 }
-vector<int> intersection_basic(vector<int> a, vector<int> b)
+vector<int> intersection_basic(vector<int> a, vector<int> b)//this is difficlut go for optimal soln for easy understanding
 {
     int n1 = a.size();
     int n2 = b.size();
@@ -200,7 +200,7 @@ vector<int> intersection_basic(vector<int> a, vector<int> b)
 }
 vector<int> intersection_optimal(vector<int> a, vector<int> b)
 {
-    sort(a.begin(), a.end());
+    sort(a.begin(), a.end());   //sorting  is compulsary dont miss 
     sort(b.begin(), b.end());
     int n1 = a.size();
     int n2 = b.size();
