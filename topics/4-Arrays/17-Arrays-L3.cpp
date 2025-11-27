@@ -71,7 +71,7 @@ int missing_optimal_xor(vector<int> &a)
     }
     for (int i = 0; i < N; i++)
     {
-        xor1 = xor1 ^ (i + 1);
+        xor1 = xor1 ^ i;
     }
     return xor1 ^ xor2;
 }
