@@ -1,5 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+//  (X)^N = M   ------>>>> u have to find the X 
+
+
 int power(int i ,int N)
 {
     int ans = 1;
