@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+//Leetcode Question 875
 long long func1(vector<int> &ex , int hour)
 {
     long long totalhrs = 0;
