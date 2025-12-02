@@ -5,7 +5,6 @@ bool possible(vector<int> &roseplant, int day, int no_of_boques, int no_of_rose)
     int count = 0;
     int boques = 0;
 
-    int ans, i, t = 0;
     for (int rose : roseplant)
     {
         if (rose <= day)
