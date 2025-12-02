@@ -44,7 +44,7 @@ int boque_brute(vector<int> &roseplant, int no_of_boques, int no_of_roses)
 int boque_optimal(vector<int> &roseplant, int no_of_boques, int no_of_roses)
 {
     int n = roseplant.size();
-    long long total = 1LL * no_of_boques * no_of_roses;
+    long long total = 1LL * no_of_boques * no_of_roses;//we use 1ll to force the multiplication from int to long
     if (n < total)
         return -1;
 
