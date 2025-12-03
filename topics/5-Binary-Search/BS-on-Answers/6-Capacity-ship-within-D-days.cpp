@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int check1(vector<int>ship, int m)
+int check1(vector<int>&ship, int m)
 {
     int days = 1 , load = 0;
     int n = ship.size();
@@ -19,7 +19,7 @@ int check1(vector<int>ship, int m)
     }
     return days; //check1 returns NUMBER OF DAYS REQUIRED to ship all packages with a given ship capacity m
 }
-int minimum_capacity_brute(vector<int>ship , int days)
+int minimum_capacity_brute(vector<int>&ship , int days)
 {
     int m = *max_element(ship.begin(),ship.end());
     while (m >= 0)
@@ -33,7 +33,7 @@ int minimum_capacity_brute(vector<int>ship , int days)
     }
     return -1;
 }
-int minimum_capacity_optimal(vector<int>ship , int days)
+int minimum_capacity_optimal(vector<int>&ship , int days)
 {
     int low = *max_element(ship.begin(),ship.end());
     int high = accumulate(ship.begin(), ship.end(),0);
