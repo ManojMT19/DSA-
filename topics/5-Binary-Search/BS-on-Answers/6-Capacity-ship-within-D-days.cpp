@@ -23,7 +23,7 @@ int minimum_capacity_brute(vector<int>&ship , int days)
 {
     int low  = *max_element(ship.begin(), ship.end());
     int high = accumulate(ship.begin(), ship.end(), 0);
-    for (int cap = low; cap <= high; ++cap)
+    for (int cap = low; cap <= high; cap++)
     {
         int ans = check1(ship , cap );
         if (ans <= days)

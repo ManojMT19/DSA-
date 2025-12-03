@@ -30,16 +30,16 @@ int Nth_root_brute(int N,int M)
     }
     return -1;
 }
-int func(int mid , int n , int m)
+int func(int mid , int N , int M)
 {
     long long ans = 1;
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i < N; i++)
     {
         ans *= mid;
-        if(ans > m) 
+        if(ans > M) 
             return 2;
     }
-    if(ans == m)return 1;
+    if(ans == M)return 1;
     return 0;
 }
 int Nth_root_optimal(int N ,int M)
