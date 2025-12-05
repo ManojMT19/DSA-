@@ -17,7 +17,8 @@ int maximumBags(vector<int>& capacity, vector<int>& rocks, int additionalRocks)
         if (x == 0) 
         {
             count++;
-        } else if (additionalRocks >= x) 
+        } 
+        else if (additionalRocks >= x) 
         { 
             additionalRocks -= x;
             count++;
