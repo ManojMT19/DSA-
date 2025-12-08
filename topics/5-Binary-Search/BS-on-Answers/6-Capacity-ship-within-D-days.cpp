@@ -7,14 +7,14 @@ int check1(vector<int>&ship, int m)
     int n = ship.size();
     for (int i : ship)
     {
-        if ((load + i) > m)
+        if ((load + i) <= m)
         {
-            days += 1;
-            load = i;
+            load += i;
         }
         else
         {
-            load += i;
+            days += 1;
+            load = i;
         }
     }
     return days; //check1 returns NUMBER OF DAYS REQUIRED to ship all packages with a given ship capacity m
