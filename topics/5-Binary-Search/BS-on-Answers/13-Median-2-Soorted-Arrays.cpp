@@ -34,7 +34,7 @@ double median_2_sorted_optimal(vector<int> &arr1 ,vector<int>&arr2)
     int n1 = arr1.size();
     int n2 = arr2.size();
     int n = n1+n2;
-    if(n1<n2) return median_2_sorted_optimal(arr2, arr1);
+    if(n1>n2) return median_2_sorted_optimal(arr2, arr1);
     int low = 0, high = n1;
     int left = (n1+n2+1)/2;
     while (low <= high)
