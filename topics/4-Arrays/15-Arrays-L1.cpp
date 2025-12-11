@@ -159,6 +159,21 @@ int removeElement_two_pointer(vector<int> &nums, int val)// Two pointer method
     }
     return k;
 }
+bool isPossibleToSplit(vector<int>& nums) 
+{
+    int n = nums.size();
+    int hash[200] = {0};
+    for(int x : nums)
+    {
+        hash[x]++;
+    }
+    for(int a : nums)
+    {
+        if(hash[a] >= 3)
+            return  false;
+    }
+    return true;
+}
 int main()
 {
     // int arr[] = {-1, -50, 120, 120, 30, 330, 74, 30, 555};
@@ -181,7 +196,12 @@ int main()
     // cout << removeDuplicates_set(nums);
     // cout << removeDuplicates_two_pointer_method(nums);
 
-    cout << removeElement_two_pointer(nums, 3);
+    // cout << removeElement_two_pointer(nums, 3);
+
+    vector<int>split1{1,1,1,2,2,3,4,5};
+    vector<int>split2{1,1,2,2,3,4,5,5};
+
+    cout << isPossibleToSplit(split2);
 
     return 0;
 }
