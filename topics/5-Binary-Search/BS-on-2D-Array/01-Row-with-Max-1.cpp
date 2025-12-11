@@ -68,7 +68,7 @@ vector<int> max_ones_unsorted(vector<vector<int>> &mat)
 {
     int n = mat.size();
     int count_max = 0;
-    int index = -1;
+    int index = -1;//we can take index = 0 based on question
 
     for(int i = 0; i < n; i++)
     {
