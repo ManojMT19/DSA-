@@ -20,12 +20,14 @@ int kthElement_brute(vector<int> &A, vector<int> &B, int k)
     return merged[k - 1];
     // TC = O(m+n)
 }
-int kthElement(vector<int> &A, vector<int> &B, int k) {
+int kthElement(vector<int> &A, vector<int> &B, int k) 
+{
     int i = 0, j = 0;
     int count = 0;
     int ans = -1;
 
-    while(i < A.size() && j < B.size()) {
+    while(i < A.size() && j < B.size()) 
+    {
         if(A[i] < B[j]) {
             ans = A[i++];
         } else {
@@ -34,16 +36,14 @@ int kthElement(vector<int> &A, vector<int> &B, int k) {
         count++;
         if(count == k) return ans;
     }
-
-    // if A still has elements
-    while(i < A.size()) {
+    while(i < A.size()) 
+    {
         ans = A[i++];
         count++;
         if(count == k) return ans;
     }
-
-    // if B still has elements
-    while(j < B.size()) {
+    while(j < B.size()) 
+    {
         ans = B[j++];
         count++;
         if(count == k) return ans;
