@@ -162,15 +162,12 @@ int removeElement_two_pointer(vector<int> &nums, int val)// Two pointer method
 bool isPossibleToSplit(vector<int>& nums) 
 {
     int n = nums.size();
-    int hash[200] = {0};
-    for(int x : nums)
+    unordered_map<int , int > freq;
+    for(int x : nums) freq[x]++;
+
+    for(auto &x : freq)
     {
-        hash[x]++;
-    }
-    for(int a : nums)
-    {
-        if(hash[a] >= 3)
-            return  false;
+        if(x.second > 2) return false;
     }
     return true;
 }
