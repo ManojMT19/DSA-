@@ -59,6 +59,7 @@ bool searchMatrix_optimal(vector<vector<int>>& matrix, int target)
     int n = matrix.size();
     int m = matrix[0].size();
     int low = 0 , high = (m*n-1);
+    //These low n high r the index when this matrix is merged into single array
     while (low <= high)
     {
         int mid = (low + high) / 2;
@@ -81,7 +82,30 @@ bool searchMatrix_optimal(vector<vector<int>>& matrix, int target)
     //TC = O(log(n*m))
     //SC = O(1)
 }
-
+bool searchMatrix_opt(vector<vector<int>>& matrix, int target)
+{
+    int n = matrix.size();
+    int m = matrix[0].size();
+    int row = 0 , col = (m-1);
+    while (row < n && col > 0)
+    {
+        if (matrix[row][col] == target)
+        {
+            return true;
+        }
+        else if (matrix[row][col] > target)
+        {
+            col--;
+        }
+        else
+        {
+            row++;
+        }
+    }
+    return false;
+    //TC = O(m+n)
+    //SC = O(1)
+}
 int main()
 {
     vector<vector<int>>ex1 {{1,4,7,11,15},
@@ -91,7 +115,8 @@ int main()
                             {18,21,23,26,30}};
     // cout << searchMatrix_brute(ex1 , 22);
     // cout << searchMatrix_binary(ex1 , 23);
-    cout << searchMatrix_optimal(ex1 , 23);
+    // cout << searchMatrix_optimal(ex1 , 23);
+    cout << searchMatrix_opt(ex1 , 23);
 
     return 0;
 }

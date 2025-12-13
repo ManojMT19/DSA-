@@ -53,7 +53,7 @@ int kthElement(vector<int> &A, vector<int> &B, int k)
     //TC = O(k)
 }
 
-//their is one more binary search by partition approach similar to median of 2 sorted arrays i didnt types here bcz i didnt understood
+//their is one more binary search by partition approach similar to median of 2 sorted arrays i didnt typed here bcz i didnt understood
 
 int main()
 {
