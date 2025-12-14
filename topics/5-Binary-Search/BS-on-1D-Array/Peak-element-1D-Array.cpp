@@ -19,6 +19,7 @@ int findPeakElement_brute(vector<int> &nums)
 int findPeakElement_binary(vector<int> &nums)
 {
     int n = nums.size();
+    if(n == 1)return 0;
     int low = 1, high = n - 2;
     int ans = -1;
     if (nums[0] > nums[1])
@@ -54,7 +55,7 @@ int main()
     vector<int> ex1{1, 2, 1, 3, 5, 6, 4};
     // vector<int> ex{5,4,3,2,1};
     cout << findPeakElement_brute(ex) << endl;
-    cout << findPeakElement_binary(ex);
+    cout << findPeakElement_binary(ex1);
 
     return 0;
 }
