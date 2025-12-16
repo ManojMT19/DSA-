@@ -17,17 +17,20 @@ vector<int> find_Peak_Grid_brute(vector<vector<int>> &matrix)
     }
     return index;
 }
-int maxRow(vector<vector<int>> &mat, int col)
+int maxRow(vector<vector<int>> &arr, int col)
 {
-    int row = 0;
-    for (int i = 0; i < mat.size(); i++)
+    int n = arr.size();
+    int max_val = INT_MIN;
+    int index = -1;
+    for (int i = 0; i < n; i++)
     {
-        if (mat[i][col] > mat[row][col])
+        if (arr[i][col] > max_val)
         {
-            row = i;
+            max_val = arr[i][col];
+            index = i;
         }
     }
-    return row;
+    return index;
 }
 vector<int> findPeakGrid(vector<vector<int>> &mat)
 {
@@ -37,18 +40,18 @@ vector<int> findPeakGrid(vector<vector<int>> &mat)
     while (low <= high)
     {
         int mid = (low + high) / 2;
-        int row = maxRow(mat , mid);
+        int row = maxRow(mat, mid);
         /*
-            We can use this also 
+            We can use this also
 
-            // Determine the elements to the left and right of 
+            // Determine the elements to the left and right of
             // the middle element in the found row
             int left = mid - 1 >= 0 ? mat[row][mid - 1] : INT_MIN;
             int right = mid + 1 < col_size ? mat[row][mid + 1] : INT_MIN;
 
             // Check if the middle element is greater than its neighbors
-            if (mat[row][mid] > left && mat[row][mid] > right) 
-            {    
+            if (mat[row][mid] > left && mat[row][mid] > right)
+            {
                 return {row, mid};
             }
         */
