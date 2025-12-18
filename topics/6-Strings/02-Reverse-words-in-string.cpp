@@ -63,8 +63,7 @@ string reverseWords_optimal(string s)
         result += word;
     }
     return result;
-    //TC = O(n)
-    //SC = O(n)
+    //TC = O(n)  , SC = O(n)
 }
 int main()
 {
