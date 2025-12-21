@@ -1,7 +1,7 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-void sortColors_brute(vector<int> &nums)
+void sortColors_brute(vector<int> &nums) //Leetcode 75
 {
     int n = nums.size();
     int count_0 = 0;
@@ -32,6 +32,8 @@ void sortColors_brute(vector<int> &nums)
     {
         cout << nums[i] << " ";
     }
+    // TC = O(n)
+    // SC = O(1)
 }
 void sortColors_optimal(vector<int> &nums) // Dutch National Flag Algorithm
 {
@@ -54,13 +56,15 @@ void sortColors_optimal(vector<int> &nums) // Dutch National Flag Algorithm
         else
         {
             swap(nums[mid], nums[high]);  
-            high--;
+            high--; // here we r not doing any change in position of mid
         }
     }
     for (int i = 0; i < n; i++)
     {
         cout << nums[i] << " ";
     } 
+    // TC = O(n)
+    // SC = O(1)
 }
 int main()
 {
