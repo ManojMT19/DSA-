@@ -62,7 +62,7 @@ void merge_1(vector<int> &nums1, int m, vector<int> &nums2, int n)
     merge_sort(nums1);
 }
 //------------------------------------------------------------------------------------------------------------------------
-void merge_2(vector<int> &nums1, int m, vector<int> &nums2, int n)
+void merge_2(vector<int> &nums1, int m, vector<int> &nums2, int n) //Leetcode 88
 {
     int i = 0;
     int j = 0;

@@ -21,6 +21,18 @@ vector<vector<int>> threeSum_brute(vector<int> &nums) // For this Time limit wil
     }
     vector<vector<int>> answer{hashset.begin(), hashset.end()};
     return answer;
+/*
+Time Complexity
+3 nested loops → O(n³)
+Sorting each triplet is constant → O(1)
+✅ TC = O(n³)
+
+Space Complexity
+set<vector<int>> stores answers → O(k) (k = number of unique triplets)
+No extra space for logic
+✅ SC = O(k)
+(usually written as O(n³) in worst-case discussion)
+*/
 }
 vector<vector<int>> threeSum_better(vector<int> &nums)
 {
@@ -43,15 +55,28 @@ vector<vector<int>> threeSum_better(vector<int> &nums)
     }
     vector<vector<int>> answer{st.begin(), st.end()};
     return answer;
+/*
+Time Complexity
+Outer loop → O(n)
+Inner loop → O(n)
+Set operations → O(log k) (small)
+✅ TC = O(n²)
+
+Space Complexity
+Inner hashset → O(n)
+Result set → O(k)
+✅ SC = O(n + k)
+(commonly written as O(n))
+*/
 }
 vector<vector<int>> threeSum_optimal(vector<int> &nums)//Leetcode 15
 {
     vector<vector<int>> answer;
-    sort(nums.begin(), nums.end());
+    sort(nums.begin(), nums.end());  // very important
     int n = nums.size();
     for (int i = 0; i < n; i++)
     {
-        if(i > 0 && nums[i] == nums[i-1]) continue;
+        if(i > 0 && nums[i] == nums[i-1]) continue;  
         int j = i + 1;
         int k = n - 1;
         while (j < k)
@@ -77,6 +102,18 @@ vector<vector<int>> threeSum_optimal(vector<int> &nums)//Leetcode 15
         }
     }
     return answer;
+/*
+Time Complexity
+Sorting → O(n log n)
+Loop + two pointers → O(n²)
+✅ TC = O(n²)
+(dominates sorting)
+
+Space Complexity
+No extra data structure
+Output storage only
+✅ SC = O(1) (excluding output)
+*/
 }
 int main()
 {
