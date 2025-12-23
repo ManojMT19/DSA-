@@ -12,6 +12,8 @@ int maxDepth(string s) // Leetcode 1614
         ans = max(ans,count);
     }
     return ans;
+    //TC = O(n)
+    //SC = O(1)
 }
 int main()
 {
