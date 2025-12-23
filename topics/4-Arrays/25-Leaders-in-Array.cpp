@@ -1,5 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+/*
+Problem Statement
+Given an array of integers, a leader is an element that is greater than or equal to all the elements to its right side.
+The rightmost element is always a leader.
+Your task is to find all the leaders in the array and return them in the same order as they appear in the array.
+*/
 vector<int> leader_brute(vector<int> a)
 {
     vector<int> answer;

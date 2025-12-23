@@ -1,6 +1,29 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
+int majorityElement_brute(vector<int>& nums)
+{
+    int n = nums.size();
+    for (int i = 0; i < n; i++)
+    {
+        int count = 0;
+        for (int j = 0; j < n; j++)
+        {
+            if (nums[j] == nums[i])
+            {
+                count++;
+            }
+        }
+
+        if (count > n / 2)
+        {
+            return nums[i];
+        }
+    }
+    return -1; 
+    //TC = O(n square)
+    //SC = O(1)
+}
 int majorityElement_hashing(vector<int> &nums) // Leetcode 169
 {
     int n = nums.size();
@@ -17,19 +40,23 @@ int majorityElement_hashing(vector<int> &nums) // Leetcode 169
             return it.first;
         }
     }
-    return {};
+    return -1;
+    //TC = O(n)
+    //SC = O(n)
 }
 int majorityElement_sort(vector<int> &nums) // Leetcode 169
 {
     sort(nums.begin(), nums.end());
     int n = nums.size();
     return nums[n / 2];
+    //TC = O(n log n)
+    //SC = O(1)
 }
-int majorityElement_optimal(vector<int> &nums) // Moore Voting Algo  
+int majorityElement_optimal(vector<int> &nums) // Moore Voting Algorithm  
 {
     int count = 0;
     int n = nums.size();
-    int element;
+    int element = 0;
     for (int i = 0; i < n; i++)
     {
         if (count == 0)
@@ -55,6 +82,8 @@ int majorityElement_optimal(vector<int> &nums) // Moore Voting Algo
     if (count_1 > (n / 2))
         return element;
     return -1;
+    //TC = O(n)
+    //SC = O(1)
 }
 int main()
 {
