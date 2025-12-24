@@ -27,8 +27,10 @@ vector<int> leader_brute(vector<int> a)
         }
     }
     return answer;
+    //TC = O(n square)
+    //SC = O(1)
 }
-//Dont get confusre between this and maximum in an array bcz in an array maximum can be only one but leader can be more than 1
+//Dont get confuse between this and maximum in an array bcz in an array maximum can be only one but leader can be more than 1
 vector<int> leader_optimal(vector<int> a)
 {
     vector<int> answer;
@@ -42,16 +44,20 @@ vector<int> leader_optimal(vector<int> a)
         }
         maxx = max(maxx, a[i]);
     }
-    sort(answer.begin(), answer.end());
+    // reverse(answer.begin(), answer.end()); // We should based on the required output
 
     return answer;
+    //TC = O(n)
+    //SC = O(1)
 }
 int main()
 {
     vector<int> arr{10, 2, 12, 3, 0, 6};
     vector<int> r = leader_optimal(arr);
-    int m = *max_element(r.begin(), r.end());
-    cout << m;
+    for(int x : r)
+    {
+        cout << x << " ";
+    }
     
     return 0;
 } 

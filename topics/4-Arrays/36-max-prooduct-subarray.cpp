@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int maxProduct_1(vector<int> &nums)
+int maxProduct_brute(vector<int> &nums)
 {
     int n = nums.size(); 
     if(n == 1)return nums[0];
@@ -16,8 +16,12 @@ int maxProduct_1(vector<int> &nums)
     }
     if (maxx == INT_MIN)return 0;
     else return maxx;
+    // Time Complexity: O(n²)
+    // Space Complexity: O(1)
 }
-int maxProduct_2(vector<int> &nums)
+//One-line intuition (memorize this)
+// Maximum product subarray is either a prefix or suffix of a zero-free segment.
+int maxProduct_optimal(vector<int> &nums) // Leetcode 152
 {
     int n = nums.size();
     int prefix = 1;
@@ -32,13 +36,15 @@ int maxProduct_2(vector<int> &nums)
         ans = max(ans, max(prefix,suffix));
     }
     return ans;
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
 }
 int main()
 {
     // vector<int> a{2,3,-2,4};
     // vector<int> a{-3,-1,-1};
     vector<int> a{-2,3,4,1,0,2,-3,1,4};
-    int r = maxProduct_2(a);
+    int r = maxProduct_optimal(a);
     cout << r;
 
     return 0;

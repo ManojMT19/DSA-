@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> majorityElement(vector<int> &nums)
+vector<int> majorityElement(vector<int> &nums) //Leetcode 229
 {
     int n = nums.size();
-    float s = (n / 3) + 1;
+    int s = (n / 3);
     vector<int> answer;
     unordered_map<int, int> mmm;
     for (int i = 0; i < n; i++)
@@ -12,12 +12,14 @@ vector<int> majorityElement(vector<int> &nums)
     }
     for (auto it : mmm)
     {
-        if (it.second >= s)
+        if (it.second > s)
         {
             answer.push_back(it.first);
         }
     }
     return answer;
+    //TC = O(n)
+    //SC = O(n)
 }
 vector<int> majorityElement_moore(vector<int> &nums)
 {
