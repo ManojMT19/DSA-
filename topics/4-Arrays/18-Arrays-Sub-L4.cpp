@@ -12,7 +12,7 @@ void longest_subarray_brute(vector<int> a, int k)
             sum += a[j];
             if (sum == k) 
             {
-                len = max(len, j - i + 1);    
+                len = max(len, j - i + 1);// we use j-i+1 to find the array length
             }
         }
     }
@@ -21,7 +21,7 @@ void longest_subarray_brute(vector<int> a, int k)
 //⬇️⬇️This is called prefix sum method
 int longsubarraywithsum_k_better(vector<int> a, long long k) //This works for both positive and negative 
 {
-    map<long long, int> premap;
+    unordered_map<long long, int> premap;
     long long sum = 0;
     int maxlen = 0;
     for (int i = 0; i < a.size(); i++)
@@ -39,10 +39,12 @@ int longsubarraywithsum_k_better(vector<int> a, long long k) //This works for bo
         }
         if (premap.find(sum) == premap.end())
         {
-            premap[sum] = i;
+            premap[sum] = i; 
         }
     }
     return maxlen;
+    // TC = O(n)  or O(n²) (theoretical worst case) since we r using unordered_map for this quuestion
+    // SC = O(n)
 }
 int longsubarraywithsum_k_optimal(vector<int> a, long long k) //Only positive
 {
@@ -57,7 +59,7 @@ int longsubarraywithsum_k_optimal(vector<int> a, long long k) //Only positive
             sum -= a[left];
             left++;
         }
-        if (sum == k)
+        if (sum == k)  
         {
             maxlen = max(maxlen, right - left + 1);   
         }

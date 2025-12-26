@@ -20,7 +20,7 @@ int longest_brute(vector<int> a)
     {
         int s = a[i];
         int count = 1;
-        while (linear_search(a, s + 1) == true)
+        while (linear_search(a, s + 1) == true)   
         {
             s = s + 1;
             count += 1;
@@ -28,6 +28,8 @@ int longest_brute(vector<int> a)
         longest = max(longest, count);
     }
     return longest;
+    //TC = O(n square)
+    //SC = O(1)
 }
 int longest_better(vector<int> &nums) //Leetcode 128
 {
@@ -55,6 +57,8 @@ int longest_better(vector<int> &nums) //Leetcode 128
         longest = max(longest, count);
     }
     return longest;
+    //TC = O(n log n)
+    //SC = O(1)
 }
 int longest_optimal(vector<int> nums)//Leetcode 128
 {
@@ -63,12 +67,12 @@ int longest_optimal(vector<int> nums)//Leetcode 128
         return 0;
     }
     int n = nums.size();
-    unordered_set<int> s(nums.begin(), nums.end());
+    unordered_set<int> s(nums.begin(), nums.end());  
     int longest = 1;
     for (auto it : s)
     {
         if (s.find(it - 1) == s.end()) // This is similar to  below line
-        // if (s.count(it - 1) == 0) // We usee this bcz we have to find the base element 
+        // if (s.count(it - 1) == 0) // We usee this bcz we have to find the base element   
         {
             int count = 1;
             int x = it;
@@ -81,12 +85,13 @@ int longest_optimal(vector<int> nums)//Leetcode 128
         }
     }
     return longest;
+    // TC = O(n)
+    // SC = O(n)
 }
 int main()
 {
     vector<int> a = {100, 101, 102, 103, 1, 2, 4, 5, 6};
-    int r = longest_optimal(a);
-    cout << r << endl;
+    cout << longest_brute(a) << endl;
 
     return 0;
 }
