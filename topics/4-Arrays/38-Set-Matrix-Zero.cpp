@@ -71,10 +71,87 @@ void setZeroes_better(vector<vector<int>> &matrix)
         cout << endl;
     }
 }
+void setZeroes_optimal(vector<vector<int>> &matrix)
+{
+    int m = matrix.size();
+    int n = matrix[0].size();
+
+    // Flag to track if first row should be zeroed
+    bool firstRowZero = false;
+    // Flag to track if first column should be zeroed
+    bool firstColZero = false;
+
+    // Check if first row has any zero
+    for (int j = 0; j < n; j++)
+    {
+        if (matrix[0][j] == 0)
+        {
+            firstRowZero = true;
+            break;
+        }
+    }
+
+    // Check if first column has any zero
+    for (int i = 0; i < m; i++)
+    {
+        if (matrix[i][0] == 0)
+        {
+            firstColZero = true;
+            break;
+        }
+    }
+
+    // Mark rows and columns in first row/column
+    for (int i = 1; i < m; i++)
+    {
+        for (int j = 1; j < n; j++)
+        {
+            if (matrix[i][j] == 0)
+            {
+                matrix[i][0] = 0;
+                matrix[0][j] = 0;
+            }
+        }
+    }
+
+    // Set matrix cells to zero based on markers
+    for (int i = 1; i < m; i++)
+    {
+        for (int j = 1; j < n; j++)
+        {
+            if (matrix[i][0] == 0 || matrix[0][j] == 0)
+            {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+
+    // Handle first row
+    if (firstRowZero)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            matrix[0][j] = 0;
+        }
+    }
+
+    // Handle first column
+    if (firstColZero)
+    {
+        for (int i = 0; i < m; i++)
+        {
+            matrix[i][0] = 0;
+        }
+    }
+    //TC = O(m*n)
+    //SC = O(1)
+}
 int main()
 {
     vector<vector<int>> mat{{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
     setZeroes_brute(mat);
+    cout << endl;
+    setZeroes_optimal(mat);
 
     return 0;
 }
