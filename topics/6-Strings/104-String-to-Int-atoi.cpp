@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int myAtoi(string s) // Leetdcode 8
+int myAtoi(string s) // Leetcode 8
 {
     int n = s.size();
     int i = 0;
