@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int beautySum(string s) 
+int beautySum(string s) //Leetcode 1781
 {
     int n = s.size();
     int ans = 0;
