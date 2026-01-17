@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> nextpurmut(vector<int> arr)
+vector<int> nextpurmut(vector<int> arr) //Leetcode 31
 {
     int index = -1;
     int n = arr.size();
@@ -14,7 +14,7 @@ vector<int> nextpurmut(vector<int> arr)
     }
     if (index == -1)
     {
-        reverse(arr.begin(), arr.end());     
+        reverse(arr.begin(), arr.end());                                             
         return arr;
     } 
     for (int i = n-1; i >= 0; i--)
@@ -25,7 +25,7 @@ vector<int> nextpurmut(vector<int> arr)
             break;
         }
     }
-    sort(arr.begin() + index + 1, arr.end());   
+    reverse(arr.begin() + index + 1, arr.end());   
     return arr;   
 }
 int main()
