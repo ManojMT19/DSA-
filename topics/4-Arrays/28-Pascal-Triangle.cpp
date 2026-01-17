@@ -3,7 +3,7 @@ using namespace std;
 int factorial(int x)
 {
     int fact = 1;
-    for (int i = 1; i < x; i++)
+    for (int i = 1; i <= x; i++)
     {
         fact *= i;
     }
@@ -66,11 +66,11 @@ vector<vector<int>> pascal_type_3_brute(int n )
 vector<int> generate_row(int n )
 {
     vector<int> a;
-    long long ans = 1;
+    long long ans = 1;  
     a.push_back(ans);
-    for (int i = 1; i < n; i++)
+    for (int i = 1; i <= n; i++)
     {
-        ans = ans * (n-i);
+        ans = ans * (n-i+1);
         ans = ans / i;
         a.push_back(ans);
     }
@@ -90,17 +90,17 @@ int main()
     int a = pascal_type_1_Brute_nCr(4,2); ///(r-1, c-1)
     // cout << a;
 
-    // pascal_type_2_better(6);
+    pascal_type_2_better(6);
 
-    // vector<vector<int>> ans = pascal_type_3_brute(6);
-    vector<vector<int>> ans = pascal_type_3_better(5);
+    vector<vector<int>> ans = pascal_type_3_brute(6);
+    // vector<vector<int>> ans = pascal_type_3_better(5);
     for (int i = 0; i < ans.size(); i++)
     {
         for (int j = 0; j < ans[i].size(); j++)
         {
-            cout << ans[i][j] << " ";
+            // cout << ans[i][j] << " ";
         }
-        cout << endl;
+        // cout << endl;
     }
 
     return 0;
