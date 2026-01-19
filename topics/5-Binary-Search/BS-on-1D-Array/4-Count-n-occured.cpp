@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 vector<int> firstandlast3(vector<int> &arr, int target) // Binary search
 {
     int n = arr.size();
@@ -7,16 +8,22 @@ vector<int> firstandlast3(vector<int> &arr, int target) // Binary search
     int high = -1;
     int first = 0;
     int last = n - 1;
-    while (first <= last)
+    while (first <= last) 
     {
-        int mid = (first + last) / 2;
-        if (arr[mid] >= target)
+        int mid = first + (last - first) / 2;
+
+        if (arr[mid] == target) 
         {
             low = mid;
+            last = mid - 1;   // move left
+        }
+        else if (arr[mid] < target) 
+        {
+            first = mid + 1;
+        }
+        else {
             last = mid - 1;
         }
-        else
-            first = mid + 1;
     }
     if (low == -1 || arr[low] != target)
     {
@@ -24,16 +31,22 @@ vector<int> firstandlast3(vector<int> &arr, int target) // Binary search
     }
     first = 0;
     last = n - 1;
-    while (first <= last)
-    {
-        int mid = (first + last) / 2;
-        if (arr[mid] <= target)
+     while (first <= last) 
+     {
+        int mid = first + (last - first) / 2;
+
+        if (arr[mid] == target) 
         {
             high = mid;
+            first = mid + 1;  // move right
+        }
+        else if (arr[mid] < target) 
+        {
             first = mid + 1;
         }
-        else
+        else {
             last = mid - 1;
+        }
     }
 
     return {low, high};
@@ -45,6 +58,8 @@ void count_n1(vector<int> arr, int target, int n)
     int b = result[1];
 
     cout << b - a + 1 << endl;
+    // TC = O(log n)
+    // SC = O(1)
 
 }
 int count_n2(const vector<int> &arr, int target) 
@@ -53,6 +68,8 @@ int count_n2(const vector<int> &arr, int target)
     auto high = upper_bound(arr.begin(), arr.end(), target);
 
     return high - low; 
+    // TC = O(log n)
+    // SC = O(1)
 }
 int main()
 {

@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+// Leetcode 34
 vector<int> firstandlast1(vector<int> &arr, int target) // linear search most simplest
 {
     int n = arr.size();
@@ -16,6 +17,8 @@ vector<int> firstandlast1(vector<int> &arr, int target) // linear search most si
     }
     vector<int> temp{low, high};
     return temp;
+    // TC = O(n)
+    // SC = O(1)
 }
 vector<int> firstandlast2(vector<int> &arr, int target) // Using Lower and Upperbound
 {
@@ -31,6 +34,8 @@ vector<int> firstandlast2(vector<int> &arr, int target) // Using Lower and Upper
     }
 
     return {low, high};
+    // TC = O(log n)
+    // SC = O(1)
 }
 vector<int> firstandlast3(vector<int> &arr, int target) // Binary search
 {
@@ -41,14 +46,21 @@ vector<int> firstandlast3(vector<int> &arr, int target) // Binary search
     int last = n - 1;
     while (first <= last) // First loop to find first element
     {
-        int mid = (first + last) / 2;
-        if (arr[mid] >= target)
+        int mid = first + (last - first) / 2;
+
+        if (arr[mid] == target)
         {
             low = mid;
-            last = mid - 1;
+            last = mid - 1; // move left
+        }
+        else if (arr[mid] < target)
+        {
+            first = mid + 1;
         }
         else
-            first = mid + 1;
+        {
+            last = mid - 1;
+        }
     }
     if (low == -1 || arr[low] != target)
     {
@@ -56,19 +68,28 @@ vector<int> firstandlast3(vector<int> &arr, int target) // Binary search
     }
     first = 0;
     last = n - 1;
-    while (first <= last) // Second loop to find last element
+    while (first <= last) // SSecond loop to find last element
     {
-        int mid = (first + last) / 2;
-        if (arr[mid] <= target)
+        int mid = first + (last - first) / 2;
+
+        if (arr[mid] == target)
         {
             high = mid;
+            first = mid + 1; // move right
+        }
+        else if (arr[mid] < target)
+        {
             first = mid + 1;
         }
         else
+        {
             last = mid - 1;
+        }
     }
 
     return {low, high};
+    // TC = O(log n)
+    // SC = O(1)
 }
 
 int main()

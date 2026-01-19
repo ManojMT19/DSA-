@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int search_rotated_array(vector<int> &arr, int n, int target)
+int search_rotated_array(vector<int> &arr, int n, int target) //Leetcode 33
 {
     int low = 0;
     int high = n - 1;
@@ -13,7 +13,7 @@ int search_rotated_array(vector<int> &arr, int n, int target)
         // Left sorted
         if (arr[low] <= arr[mid])
         {
-            if (arr[low] <= target && target < arr[mid]) //Note < and <= 
+            if (arr[low] <= target && target < arr[mid]) //Note <= and <
             {
                 high = mid - 1;
             }

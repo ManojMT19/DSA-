@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-bool search_rotated_array(vector<int> &arr, int target)
+//Leetcode 81 --->> similar to LC 33 but this is with duplicates
+bool search_rotated_array_2(vector<int> &arr, int target) 
 {
     int n = arr.size();
     int low = 0;
@@ -49,7 +50,7 @@ int main()
 {
     vector<int> nums{5,6,7,8,1,2,3,4,5,5,5};
     
-    cout << search_rotated_array(nums , 8);
+    cout << search_rotated_array_2(nums , 8);
 
     return 0;
 }
