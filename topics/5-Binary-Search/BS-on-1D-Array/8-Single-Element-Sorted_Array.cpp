@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int single_sorted_brute(vector<int> &arr)
+int single_sorted_brute(vector<int> &arr) // Leetcode 540
 {
     int n = arr.size();
     if (n == 1)
@@ -27,44 +27,50 @@ int single_sorted_brute(vector<int> &arr)
         }
     }
     return -1;
+    // TC = O(n)
+    // SC = O(1)
 }
-int single_sorted_ooptimise(vector<int> &arr)
+int single_sorted_ooptimise(vector<int> &nums)
 {
-    int n = arr.size();
-    if (n == 1)
-        return arr[0];
-    if (arr[0] != arr[1])
-        return arr[0];
-    if (arr[n - 1] != arr[n - 2])
-        return arr[n - 1];
-
     /*
-    ⚡ Simple memory version:
+        Simple memory version:
+        
+        Binary search invariant (this is the key)
 
-    Even index = first of pair
-    Odd index = second of pair
+        Before the single element
+        pairs start at even index
 
-    When this pattern breaks → you’ve crossed the single element.
+        After the single element
+        pairs start at odd index
 
-    If pattern holds → go right, else → go left.
+        So at any mid, we can decide:
+
+        “Am I left of the single?”
+
+        or “Am I right of the single?”
     */
-    int low = 1, high = n - 2;
-    while (low <= high)
+    int low = 0, high = nums.size() - 1;
+
+    while (low < high)
     {
         int mid = low + (high - low) / 2;
-        if (arr[mid] != arr[mid + 1] && arr[mid] != arr[mid - 1])
-            return arr[mid];
 
-        if ((mid % 2 == 1 && arr[mid] == arr[mid - 1]) || (mid % 2 == 0 && arr[mid] == arr[mid + 1]))
+        // force mid to be even --- most IMPORTANT
+        if (mid % 2 == 1)
+            mid--;
+
+        if (nums[mid] == nums[mid + 1])
         {
-            low = mid + 1;
+            // pair intact → single is right
+            low = mid + 2;
         }
         else
         {
-            high = mid - 1;
+            // pair broken → single is here or left
+            high = mid;
         }
     }
-    return -1;
+    return  nums[low];
 }
 int main()
 {
@@ -112,7 +118,7 @@ int single_hash(vector<int> &arr)
     }
     return -1;
 }
-int single_XOR(vector<int> &arr)
+int single_XOR(vector<int> &arr) // best and most optimal soln
 {
     int ans = 0;
     for (int x : arr)
