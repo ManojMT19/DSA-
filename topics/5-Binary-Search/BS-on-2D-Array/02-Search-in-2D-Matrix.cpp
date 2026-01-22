@@ -54,15 +54,19 @@ bool searchMatrix_binary(vector<vector<int>>& matrix, int target)
     //TC = O(n*log m)
     //SC = O(1)
 }
-bool searchMatrix_optimal(vector<vector<int>>& matrix, int target) 
+bool searchMatrix_optimal(vector<vector<int>>& matrix, int target) //Leetcode 74
 {
+    if (matrix.empty() || matrix[0].empty())
+        return false;
+    
     int n = matrix.size();
     int m = matrix[0].size();
     int low = 0 , high = (m*n-1);
     //These low n high r the index when this matrix is merged into single array
     while (low <= high)
     {
-        int mid = (low + high) / 2;
+        int mid = low + (high - low) / 2;
+        
         int row = mid/m;
         int col = mid%m;
         if (matrix[row][col] == target)
@@ -87,7 +91,7 @@ bool searchMatrix_opt(vector<vector<int>>& matrix, int target)
     int n = matrix.size();
     int m = matrix[0].size();
     int row = 0 , col = (m-1);
-    while (row < n && col > 0)
+    while (row < n && col >= 0)
     {
         if (matrix[row][col] == target)
         {
