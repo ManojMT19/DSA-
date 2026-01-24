@@ -1,21 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
-//Leetcode Question 875
 long long func1(vector<int> &ex , int hour)
 {
     long long totalhrs = 0;
     for (int x : ex)
     {
-        // totalhrs += (x + hour - 1)/hour;
-        totalhrs += ceil((double)x / hour);
+        // ceil_division formula = ceil(a/b) = (a + b - 1)/b;
+        // totalhrs += (x + hour - 1)/hour;  
+        totalhrs += ceil((double)x / hour);  // Converting to double is very important
     }
     return totalhrs;   
 }
 int koko_brute(vector<int> &koko, int h)
 {
     int m = *max_element(koko.begin(), koko.end());
-    int n = koko.size();
-    int count = 0;
     for (int j = 1; j <= m ; j++)
     {
         int ans = func1(koko , j);
@@ -25,8 +23,10 @@ int koko_brute(vector<int> &koko, int h)
         }
     }
     return m;
+    //TC = O(n*m), where n = size of array, m = maximum element in koko
+    //SC = O(1)
 }
-int koko_optimal(vector<int> &koko , int h)
+int koko_optimal(vector<int> &koko , int h)   //Leetcode 875
 {
     int m = *max_element(koko.begin(),koko.end());
     int low = 1;
@@ -46,7 +46,9 @@ int koko_optimal(vector<int> &koko , int h)
             low = mid + 1;
         }
     }
-    return ans ;
+    return ans;
+    //TC = O(n*log m), where n = size of koko, m = maximum element in the array
+    //SC = O(1)
 }
 int main()
 {
