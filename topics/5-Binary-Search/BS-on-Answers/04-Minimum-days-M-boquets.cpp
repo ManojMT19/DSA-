@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+//Leetcode 1482
 bool possible(vector<int> &roseplant, int day, int no_of_boques, int no_of_rose)
 {
     int count = 0;
@@ -39,6 +40,8 @@ int boque_brute(vector<int> &roseplant, int no_of_boques, int no_of_roses)
         }
     }
     return -1;
+    // TC = O(n * (maxDay − minDay))
+    // SC = O(1)
 }
 int boque_optimal(vector<int> &roseplant, int no_of_boques, int no_of_roses)
 {
@@ -65,6 +68,8 @@ int boque_optimal(vector<int> &roseplant, int no_of_boques, int no_of_roses)
         }
     }
     return ans;
+    // TC = O(n * log(maxDay − minDay))
+    // SC = O(1)
 }
 int main()
 {
