@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+// Leetcode 1283 
+// Similar to KOKO BANANA
 int smallest_divisor_brute(vector<int> &nums, int threshold)
 {
     int n = nums.size();

@@ -17,9 +17,11 @@ int missing_no_brute(vector<int> &arr, int k)
     }
 
     return temp[k - 1];
+    //TC: O(n + k)
+// SC: O(k)
 }
 
-int findKthMissing_brute(vector<int> &arr, int k)//this is better than above in terms of TC and SC
+int findKthMissing_brute(vector<int> &arr, int k)
 {
     for (int i = 0; i < arr.size(); i++)
     {
@@ -33,6 +35,8 @@ int findKthMissing_brute(vector<int> &arr, int k)//this is better than above in 
         }
     }
     return k;
+    // TC: O(n)
+    // SC: O(1)
 }
 /*
 We first assume the k-th missing number is k.
@@ -40,7 +44,28 @@ Then we iterate through the array.
 Every number that is smaller than or equal to our assumed answer means one missing spot is no longer missing, so we push the answer forward by one.
 When we reach a number greater than our current guess, we stop — at that point our guess has already adjusted correctly and is the answer.
 */
+int findKthPositive(vector<int>& arr, int k) // easy to explain n understand
+{
+    int curr = 1;
+    int i = 0;
 
+    while (k > 0) 
+    {
+        if (i < arr.size() && arr[i] == curr) 
+        {
+            i++;        // number exists, not missing
+        } 
+        else 
+        {
+            k--;        // number is missing
+            if (k == 0) return curr;
+        }
+        curr++;
+    }
+    return -1;
+    //TC: O(n + k)
+    // SC: O(1)
+}
 int findKthMissing_optimal(vector<int> &arr, int k)
 {
     int n = arr.size();
@@ -50,6 +75,10 @@ int findKthMissing_optimal(vector<int> &arr, int k)
     {
         int mid = (low+high)/2;
         int missing = arr[mid] - (mid + 1);
+        /*
+        At index i, expected value = i + 1  
+        Missing numbers till i = arr[i] − (i + 1)
+        */
         if(missing < k)
         {
             low = mid+1;
@@ -59,7 +88,10 @@ int findKthMissing_optimal(vector<int> &arr, int k)
             high = mid-1;
         }
     }
-    return k + high + 1;//we can return k+low also bcz low = high + 1 , Dry run if u didnt get
+    return k + low;
+    // return k + high + 1;//we can return k+low also bcz low = high + 1 , Dry run if u didnt get
+    // TC: O(log n)
+    // SC: O(1)
 }
 int main()
 {
