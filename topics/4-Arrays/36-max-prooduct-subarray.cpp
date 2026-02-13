@@ -43,7 +43,8 @@ int main()
 {
     // vector<int> a{2,3,-2,4};
     // vector<int> a{-3,-1,-1};
-    vector<int> a{-2,3,4,1,0,2,-3,1,4};
+    vector<int> a{-2,3,4,1,0,2,3,1,4};
+    // int r = maxProduct_brute(a);
     int r = maxProduct_optimal(a);
     cout << r;
 
