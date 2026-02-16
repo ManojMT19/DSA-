@@ -18,7 +18,7 @@ int missing_no_brute(vector<int> &arr, int k)
 
     return temp[k - 1];
     //TC: O(n + k)
-// SC: O(k)
+    // SC: O(k)
 }
 
 int findKthMissing_brute(vector<int> &arr, int k)
@@ -74,7 +74,7 @@ int findKthMissing_optimal(vector<int> &arr, int k)
     while (low <= high)
     {
         int mid = (low+high)/2;
-        int missing = arr[mid] - (mid + 1);
+        int missing = arr[mid] - (mid + 1); //this gives how many numbers are missing before that position.
         /*
         At index i, expected value = i + 1  
         Missing numbers till i = arr[i] − (i + 1)
