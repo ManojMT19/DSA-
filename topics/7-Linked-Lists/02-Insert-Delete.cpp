@@ -37,7 +37,7 @@ node *ARR_to_LL(vector<int> &arr)
 node *remove_head(node *head)
 {
     if (head == nullptr)
-        return head;
+        return nullptr;
 
     node *temp = head;
     head = head->next;
@@ -160,8 +160,10 @@ node *insert_last(node *head, int ele)
     mover->next = temp;
     return head;
 }
-node *insert_kth(node *head, int k, int ele) // logic is corect but so many memory leaks happen
+node *insert_kth(node *head, int k, int ele) // This inserts after temp
 {
+    if (k <= 0) return head;
+
     if (head == nullptr)
     {
         if (k == 1)
@@ -178,7 +180,6 @@ node *insert_kth(node *head, int k, int ele) // logic is corect but so many memo
         return new node(ele, head);
     }
     node *temp = head;
-    node *mover = new node(ele);
     node *prev = nullptr;
     int cnt = 0;
     while (temp)
@@ -186,6 +187,7 @@ node *insert_kth(node *head, int k, int ele) // logic is corect but so many memo
         cnt++;
         if (cnt == k)
         {
+            node *mover = new node(ele);
             prev->next = mover;
             mover->next = temp;
             break;
@@ -193,9 +195,13 @@ node *insert_kth(node *head, int k, int ele) // logic is corect but so many memo
         prev = temp;
         temp = temp->next;
     }
+    if (cnt == k - 1) // Insert at end ,when k = Length + 1 
+    {
+        prev->next = new node(ele);
+    }
     return head;
 }
-node *insert_kth_chatgpt(node *head, int k, int ele)
+node *insert_kth_chatgpt(node *head, int k, int ele)  // This inserts before temp
 {
     if (k <= 0)
         return head; // invalid position
@@ -216,7 +222,7 @@ node *insert_kth_chatgpt(node *head, int k, int ele)
     node *temp = head;
     int cnt = 0;
  
-    while (temp != nullptr)
+    while (temp)
     {
         cnt++;
         if(cnt == k-1)
