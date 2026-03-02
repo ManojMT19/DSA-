@@ -36,7 +36,7 @@ void display(ListNode *head)
     }
     cout << endl;
 }
-ListNode *deleteMiddle_brute(ListNode *head)
+ListNode *deleteMiddle_brute(ListNode *head) //Leetcode 2095
 {
     int count = 0;
     ListNode*temp = head;
