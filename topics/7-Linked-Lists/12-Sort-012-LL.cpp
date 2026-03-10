@@ -79,7 +79,7 @@ ListNode *sort_zero_one_two_optimal(ListNode *head)
 {
     ListNode *temp = head;
 
-    // Here we created a dummy node all these n having value zero n next points to nullptr
+    // Here we created a dummy node all these and having value -1 and its next pointer points to nullptr
     ListNode *zerohead = new ListNode(-1);
     ListNode *onehead = new ListNode(-1);
     ListNode *twohead = new ListNode(-1);

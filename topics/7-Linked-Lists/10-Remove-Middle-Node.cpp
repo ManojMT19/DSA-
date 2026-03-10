@@ -62,7 +62,7 @@ ListNode *deleteMiddle_brute(ListNode *head) //Leetcode 2095
     }
     return head;
 }
-ListNode *deleteMiddle_Optimal(ListNode *head)
+ListNode *deleteMiddle_Optimal(ListNode *head) 
 {
     if (!head || !head->next)return nullptr;
     
@@ -80,9 +80,10 @@ ListNode *deleteMiddle_Optimal(ListNode *head)
     
     return head;
 }
-ListNode *deleteMiddle_Optimal_2(ListNode *head)
+ListNode *deleteMiddle_Optimal_2(ListNode *head)    
 {
     if (!head || !head->next)return nullptr;
+    // if (head == nullptr || head->next == nullptr)return nullptr;  // Above line iss same as this 
     ListNode*slow = head;
     ListNode*fast = head;
     fast = fast->next->next;
