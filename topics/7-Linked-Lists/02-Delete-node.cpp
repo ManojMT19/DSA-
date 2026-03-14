@@ -9,7 +9,7 @@ struct ListNode
     ListNode(int x) : val(x), next(NULL) {}
 };
 
-void deleteNode(ListNode *node)
+void deleteNode(ListNode *node) // Leetcode 237
 {
     ListNode *temp = node->next;
     node->val = temp->val;
