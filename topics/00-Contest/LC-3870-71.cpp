@@ -35,6 +35,26 @@ long long countCommas_ll(long long n)
     }
     return count;
 }
+
+int second_max(vector<int> arr)
+{
+    int maxx = INT_MIN;
+    int sec_maxx = INT_MIN;
+    for(int x : arr)
+    {
+        if(x > maxx)
+        {
+            sec_maxx = maxx;
+            maxx = x;
+        }
+        else if(x > sec_maxx  &&  x < maxx)  
+        {
+            sec_maxx = x;
+        }
+    }
+    return sec_maxx;
+}
+
 int main()
 {
     int r1 = countCommas_1(12345);
@@ -45,6 +65,9 @@ int main()
 
     long long rl = countCommas_ll(1234567890);
     cout << rl << endl;
+
+    vector<int>arr{1,2,3,4,5,6};
+    cout << second_max(arr);
 
     return 0;
 }

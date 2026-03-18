@@ -34,7 +34,7 @@ int countUniqueSubstrings(string s)
     return ans;
 }
 
-// 2.2 COUNT SUBSTRINGS WITH AT MOST K DISTINCT CHARACTERS
+// 2.2 COUNT SUBSTRINGS WITH AT MOST K DISTINCT CHARACTERS   
 
 int atMostKDistinct(string s, int k)
 {
@@ -108,7 +108,7 @@ int subarraySumK(vector<int> &nums, int k)
 
 // 4. FREQUENCY-BASED SUBSTRINGS (LC 1781 – BEAUTY SUM)
 
-int beautySum(string s)
+int beautySum(string s) // Not so important
 {
     int n = s.size(), ans = 0;
 
