@@ -7,26 +7,7 @@ double myPow(double x, int n)
 
     return (myPow(x, n - 1)) * x;
 }
-double myPow_optimal(double x, int n)
-{
-    long long N = n; 
-    if (N < 0)
-    {
-        x = 1 / x;
-        N = -N;
-    }
 
-    double result = 1.0;
-    while (N)
-    {
-        if (N % 2 == 1)
-            result *= x;
-        x *= x;
-        N /= 2;
-    }
-
-    return result;
-}
 double myPow1(double x, int n)
 {
     long long nn = n;
@@ -34,7 +15,6 @@ double myPow1(double x, int n)
         nn = nn * (-1);
 
     double ans = 1.0;
-
 
     //If nn is even multiply x*x and divide nn by 2
     //If nn is odd we multiply the ans*x and we reduce the nn by 1
@@ -63,9 +43,9 @@ double myPow1(double x, int n)
 
 int main()
 {
-    cout << myPow_optimal(2, 10);
+    cout << myPow(2, 10) << endl;
 
-    // cout << power(2, -3);
+    cout << myPow1(2, -2);
 
     return 0;
 }
