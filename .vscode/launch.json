@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "SQ05_Next_Greater_Element_2",
+      "request": "launch",
+      "mainClass": "SQ05_Next_Greater_Element_2",
+      "projectName": "DSA_db83e928"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
@@ -19,6 +26,12 @@
           "ignoreFailures": true
         }
       ]
+    },
+    {
+      "type": "java",
+      "name": "Debug Java",
+      "request": "launch",
+      "mainClass": "${file}"
     }
   ]
 }
