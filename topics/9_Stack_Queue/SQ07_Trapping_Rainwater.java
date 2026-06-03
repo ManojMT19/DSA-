@@ -9,7 +9,7 @@ public class SQ07_Trapping_Rainwater
         int suffix[] = new int[nums.length];
 
         prefix[0] = nums[0];
-        for (int i = 1; i < n - 1; i++)
+        for (int i = 1; i < n; i++)
         {
             prefix[i] = Math.max(prefix[i - 1], nums[i]);
         }
