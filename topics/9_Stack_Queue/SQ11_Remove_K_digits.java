@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class SQ11_Remove_Key
+public class SQ11_Remove_K_digits
 {
     public static String removeKdigits_brute(String num, int k)
     {
