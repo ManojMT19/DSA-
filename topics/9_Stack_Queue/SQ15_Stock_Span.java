@@ -36,7 +36,7 @@ public class SQ15_Stock_Span
         int span = 1;
 
         while (!st.isEmpty() && st.peek()[0] <= price)
-        {g
+        {
             span += st.pop()[1];
         }
 

@@ -63,10 +63,10 @@ public class SQ12_Area_Rectangle_Histogram
         //SC = O(N)
     }
 
-    public static int largestRectangleArea_optimal(int[] heights)
-    {
-        //Optimal soln not written bcz i didnt understood
-    }
+    // public static int largestRectangleArea_optimal(int[] heights)
+    // {
+                    //Optimal soln not written bcz i didnt understood
+    // }
 
 
     public static void main(String[] args) {

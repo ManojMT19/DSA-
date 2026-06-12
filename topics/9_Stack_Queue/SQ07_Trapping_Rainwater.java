@@ -1,5 +1,3 @@
-import java.util.HashMap;
-
 public class SQ07_Trapping_Rainwater
 {
     public static int trap(int[] nums)
@@ -35,14 +33,14 @@ public class SQ07_Trapping_Rainwater
         // SC = O(n)
     }
 
-    public static int trap_optimal(int[] nums)
-    {
+    // public static int trap_optimal(int[] nums)
+    // {
 
-    }
+    // }
 
     public static void main(String[] args)
     {
-        int nums[] = {4,2,0,3,2,5};
+        // int nums[] = {4,2,0,3,2,5};
         int nums[] = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
         int r = trap(nums);
         System.out.println(r);
