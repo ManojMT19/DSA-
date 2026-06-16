@@ -2,6 +2,25 @@ import java.util.*;
 
 public class SQ04_Next_Greater_Element_1
 {
+    public static int[] Next_Greater_Element(int[] arr) // if they give in array
+    {
+        int n = arr.length;
+        int[] ans = new int[n];
+
+        Stack<Integer> st = new Stack<>();
+
+        for (int i = n - 1; i >= 0; i--)
+        {
+            while (!st.isEmpty() && st.peek() <= arr[i])
+            {
+                st.pop();
+            }
+            ans[i] = st.isEmpty() ? -1 : st.peek();
+            st.push(arr[i]);
+        }
+        return ans;
+    }
+
     public static int[] nextGreaterElement_optimal(int[] nums1, int[] nums2)
     {
         Stack<Integer> st = new Stack<>();
@@ -26,11 +45,11 @@ public class SQ04_Next_Greater_Element_1
         }
 
         return ans;
-        //TC = O(n1 + n2)
+        // TC = O(n1 + n2)
         // SC = O(n1)
     }
 
-    public static int[] nextGreaterElement(int[] nums1, int[] nums2)
+    public static int[] nextGreaterElement_brute(int[] nums1, int[] nums2)
     {
         int[] r = new int[nums1.length];
         int y = 0;
@@ -65,7 +84,9 @@ public class SQ04_Next_Greater_Element_1
         int n1[] = { 4, 1, 2 };
         int n2[] = { 1, 3, 4, 2 };
 
-        int result[] = nextGreaterElement_optimal(n1, n2);
+        // int result[] = nextGreaterElement_optimal(n1, n2);
+
+        int result[] = Next_Greater_Element(n2);
 
         for (int i = 0; i < result.length; i++)
         {

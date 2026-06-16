@@ -1,30 +1,28 @@
-package topics.9-Stack-Queue;
-
 import java.util.*;
 
 class Stack_Array
 {
     private int maxSize;
     private int[] stackArray;
-    private int top;
+    private int peek;
 
     // Constructor
-    public Stack(int size)
+    public Stack_Array(int size)
     {
         maxSize = size;
         stackArray = new int[maxSize];
-        top = -1;
+        peek = -1;
     }
 
     // Push operation
     public void push(int value)
     {
-        if (top == maxSize - 1)
+        if (peek == maxSize - 1)
         {
             System.out.println("Stack Overflow");
         } else
         {
-            stackArray[++top] = value;
+            stackArray[++peek] = value;
             System.out.println(value + " pushed into stack");
         }
     }
@@ -32,45 +30,45 @@ class Stack_Array
     // Pop operation
     public int pop()
     {
-        if (top == -1)
+        if (peek == -1)
         {
             System.out.println("Stack Underflow");
             return -1;
         } else
         {
-            return stackArray[top--];
+            return stackArray[peek--];
         }
     }
 
     // Peek operation
     public int peek()
     {
-        if (top == -1)
+        if (peek == -1)
         {
             System.out.println("Stack is empty");
             return -1;
         } else
         {
-            return stackArray[top];
+            return stackArray[peek];
         }
     }
 
     // Check if stack is empty
     public boolean isEmpty()
     {
-        return top == -1;
+        return peek == -1;
     }
 
     // Display stack
     public void display()
     {
-        if (top == -1)
+        if (peek == -1)
         {
             System.out.println("Stack is empty");
         } else
         {
             System.out.println("Stack elements:");
-            for (int i = top; i >= 0; i--)
+            for (int i = peek; i >= 0; i--)
             {
                 System.out.println(stackArray[i]);
             }
@@ -84,7 +82,7 @@ class Queue_Array
     int front, rear, currentSize, maxSize;
 
     // Constructor
-    Queue(int maxSize)
+    Queue_Array(int maxSize)
     {
         this.maxSize = maxSize;
         arr = new int[maxSize];
@@ -191,15 +189,15 @@ class Node
 
 class Stack_LL
 {
-    Node top;
+    Node peek;
 
     // Push operation
     void push(int value)
     {
         Node newNode = new Node(value);
 
-        newNode.next = top;
-        top = newNode;
+        newNode.next = peek;
+        peek = newNode;
 
         System.out.println(value + " pushed");
     }
@@ -207,14 +205,14 @@ class Stack_LL
     // Pop operation
     int pop()
     {
-        if (top == null)
+        if (peek == null)
         {
             System.out.println("Stack Underflow");
             return -1;
         }
 
-        int value = top.data;
-        top = top.next;
+        int value = peek.data;
+        peek = peek.next;
 
         return value;
     }
@@ -223,20 +221,20 @@ class Stack_LL
     int peek()
     {
 
-        if (top == null)
+        if (peek == null)
         {
             System.out.println("Stack is empty");
             return -1;
         }
 
-        return top.data;
+        return peek.data;
     }
 
     // Display stack
     void display()
     {
 
-        if (top == null)
+        if (peek == null)
         {
             System.out.println("Stack is empty");
             return;
@@ -244,7 +242,7 @@ class Stack_LL
 
         System.out.println("Stack elements:");
 
-        Node temp = top;
+        Node temp = peek;
 
         while (temp != null)
         {
@@ -342,7 +340,7 @@ class stack_using_queue
         q.remove();
     }
 
-    void top()
+    int peek()
     {
         return q.peek();
     }
@@ -354,18 +352,18 @@ class queue_using_stack_1
     Stack<Integer> s1 = new Stack<>();
     Stack<Integer> s2 = new Stack<>();
 
-    int push(int n)
+    void push(int n)
     {
-        while (s1.size())
+        while (s1.size() != 0)
         {
-            s2.push(s1.top());
+            s2.push(s1.peek());
             s1.pop();
         }
         s1.push(n);
 
-        while (s2.size())
+        while (s2.size() != 0)
         {
-            s1.push(s2.top());
+            s1.push(s2.peek());
             s2.pop();
         }
     }
@@ -375,9 +373,9 @@ class queue_using_stack_1
         s1.pop();
     }
 
-    void top()
+    void peek()
     {
-        s1.top();
+        s1.peek();
     }
 
 }
@@ -398,29 +396,30 @@ class queue_using_stack_2
             s2.pop();
         } else
         {
-            while (s1.size())
+            while (s1.size() != 0)
             {
-                s2.push(s1.top());
+                s2.push(s1.peek());
                 s1.pop();
             }
             s2.pop();
         }
     }
 
-    int top()
+    int peek()
     {
-        if (s2.empty() != 0)
+        if (!s2.isEmpty())
         {
             s2.pop();
         } else
         {
-            while (s1.size())
+            while (s1.size() !=0)
             {
-                s2.push(s1.top());
+                s2.push(s1.peek());
                 s1.pop();
             }
             return s2.pop();
         }
+        return 0;
     }
 
 }
@@ -452,7 +451,7 @@ class MyStack
         return q.remove();
     }
 
-    public int top()
+    public int peek()
     {
         return q.peek();
     }

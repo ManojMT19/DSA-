@@ -7,16 +7,13 @@ public class SQ02_Valid_Parenthesis
         char[] ss = s.toCharArray();
 
         Stack<Character> st = new Stack<>();
-        int n = ss.length;
-        int count = 0;
 
         for (char c : ss)
         {
             if (c == '(' || c == '[' || c == '{')
             {
                 st.push(c);
-            } 
-            else
+            } else
             {
                 if (st.isEmpty())
                     return false;
