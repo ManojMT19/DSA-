@@ -44,6 +44,7 @@ public class SQ14_Sliding_Window_Maximum
         for (int i = 0; i < nums.length; i++)
         {
             // Rule 1: Remove indices outside current window
+            // This removes elements that are no longer inside the window 
             if (!dq.isEmpty() && dq.peekFirst() <= i - k)
             {
                 dq.pollFirst();
