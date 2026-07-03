@@ -62,7 +62,6 @@ public class SQ05_Next_Greater_Element_2
     {
         int[] res = new int[nums.length];
         Stack<Integer> st = new Stack<>();
-        HashMap<Integer, Integer> map = new HashMap<>();
 
         int n = nums.length;
         for (int i = 2*n-1; i >= 0; i--)

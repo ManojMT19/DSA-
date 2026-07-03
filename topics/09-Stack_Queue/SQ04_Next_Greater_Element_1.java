@@ -81,7 +81,7 @@ public class SQ04_Next_Greater_Element_1
 
     public static void main(String[] args)
     {
-        int n1[] = { 4, 1, 2 };
+        // int n1[] = { 4, 1, 2 };
         int n2[] = { 1, 3, 4, 2 };
 
         // int result[] = nextGreaterElement_optimal(n1, n2);
