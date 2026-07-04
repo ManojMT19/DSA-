@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class SQ_20_remove_All_Adjacent_Duplicants_String
+public class SQ20_remove_All_Adjacent_Duplicants_String
 {
     public static String removeDuplicates(String s)
     {
