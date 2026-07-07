@@ -24,7 +24,8 @@ public class SQ09_Asteroid_Collision
                     st.pop();
                     destroyed = true;
                     break;
-                } else
+                } 
+                else //st.peek() > -asteroid
                 {
                     destroyed = true;
                     break;

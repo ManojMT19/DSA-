@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.Stack;
 
 public class SQ05_Next_Greater_Element_2
