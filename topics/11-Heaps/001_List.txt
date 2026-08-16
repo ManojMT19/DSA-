@@ -1,0 +1,50 @@
+# 🔥 Heap — Must-Do Problems
+
+## Pattern 1 — Basic / Top K ✅ COMPLETED
+
+1. **LC 215** — Kth Largest Element in an Array
+2. **LC 347** — Top K Frequent Elements
+3. **LC 973** — K Closest Points to Origin
+4. **LC 692** — Top K Frequent Words
+
+---
+
+## Pattern 2 — Two Heaps
+
+5. **LC 295** — Find Median from Data Stream ✅
+6. **LC 480** — Sliding Window Median ⏸️ *Skipped for now*
+
+---
+
+## Pattern 3 — K-Way Merge
+
+7. **LC 23** — Merge k Sorted Lists
+8. **LC 378** — Kth Smallest Element in a Sorted Matrix
+9. **LC 373** — Find K Pairs with Smallest Sums
+
+---
+
+## Pattern 4 — Greedy + Heap
+
+10. **LC 1642** — Furthest Building You Can Reach
+11. **LC 621** — Task Scheduler
+12. **LC 767** — Reorganize String
+13. **LC 502** — IPO
+14. **LC 630** — Course Schedule III
+
+---
+
+## Pattern 5 — Heap + Intervals
+
+15. **LC 253** — Meeting Rooms II
+16. **LC 759** — Employee Free Time
+
+---
+
+## Pattern 6 — Heap + Greedy Optimization
+
+17. **LC 1167** — Minimum Cost to Connect Sticks
+18. **LC 857** — Minimum Cost to Hire K Workers
+19. **LC 871** — Minimum Number of Refueling Stops
+20. **LC 1383** — Maximum Performance of a Team
+
