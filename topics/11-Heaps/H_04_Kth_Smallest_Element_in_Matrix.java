@@ -53,32 +53,32 @@ public class H_04_Kth_Smallest_Element_in_Matrix // Leetcode 378
 
         int n = matrix.length;
 
-        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> Integer.compare(a[0], b[0]));  // min heap (smallest on top)
+        PriorityQueue<int[]> minheap = new PriorityQueue<>((a, b) -> Integer.compare(a[0], b[0]));  // min heap (smallest on top)
 
         // (a, b) -> Integer.compare(b[0], a[0]) // max heap (largest on top)
 
         for (int i = 0; i < n; i++)
         {
-            pq.offer(new int[] { matrix[i][0], i, 0 });
+            minheap.offer(new int[] { matrix[i][0], i, 0 });
         }
 
         while (k > 1)
         {
 
-            int[] curr = pq.poll();
+            int[] curr = minheap.poll();
 
             int row = curr[1];
             int col = curr[2];
 
             if (col + 1 < n)
             {
-                pq.offer(new int[] { matrix[row][col + 1], row, col + 1 });
+                minheap.offer(new int[] { matrix[row][col + 1], row, col + 1 });
             }
 
             k--;
         }
 
-        return pq.peek()[0];
+        return minheap.peek()[0];
     }
 
     public static void main(String[] args)
