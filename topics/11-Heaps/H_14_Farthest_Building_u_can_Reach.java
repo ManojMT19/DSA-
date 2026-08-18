@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 
-public class H_14_Farthest_Building_u_can_Reach
+public class H_14_Farthest_Building_u_can_Reach // Leetcode 1642
 {
     public static int furthestBuilding(int[] heights, int bricks, int ladders) 
     {
