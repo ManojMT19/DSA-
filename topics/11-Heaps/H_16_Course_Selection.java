@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-public class H_16_Course_Selection
+public class H_16_Course_Selection // Leetcode 630
 {
     public static int scheduleCourse(int[][] courses)
     {
