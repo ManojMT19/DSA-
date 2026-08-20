@@ -59,7 +59,7 @@ public class H_01_Kth_Smallest_Element
         // System.out.println(p[2]);
         // System.out.println(Arrays.toString(p));
 
-        // System.out.println(FindKthSmallest(p, 3));
+        System.out.println(FindKthSmallest(p, 3));
 
     }
 
