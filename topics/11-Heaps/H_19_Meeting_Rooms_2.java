@@ -27,6 +27,31 @@ public class H_19_Meeting_Rooms_2 /// Leetcode 253
         // SC = O(1)
     }
 
+    public static int meetingRooms_Brute_2(int[][] intervals)  // best brute answer
+    {
+        int maxRooms = 0;
+
+        for (int[] currentMeeting : intervals)
+        {
+            int start = currentMeeting[0];
+            int stop = currentMeeting[1];
+            int activeMeetings = 0;
+
+            for (int[] meeting : intervals)
+            {
+                if (meeting[0] <= start && stop <= meeting[1])
+                {
+                    activeMeetings++;
+                }
+            }
+
+            maxRooms = Math.max(maxRooms, activeMeetings);
+        }
+        return maxRooms;
+        // TC = O(n^2)
+        // SC = O(1)
+    }
+
     public static int meetingRooms_Optimal(int[][] intervals)
     {
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));      
@@ -54,6 +79,7 @@ public class H_19_Meeting_Rooms_2 /// Leetcode 253
         int intervals[][] = { { 0, 30 }, { 5, 10 }, { 15, 20 } };
 
         System.out.println(meetingRooms_Brute(intervals));
+        System.out.println(meetingRooms_Brute_2(intervals));
         System.out.println(meetingRooms_Optimal(intervals));
     }
 }

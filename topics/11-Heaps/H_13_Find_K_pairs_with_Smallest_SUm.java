@@ -32,6 +32,8 @@ public class H_13_Find_K_pairs_with_Smallest_SUm // Leetcode 373
         }
 
         return result.reversed();
+        // TC: O(N × M × log K)
+        // SC: O(K)
     }
 
     
@@ -49,20 +51,22 @@ public class H_13_Find_K_pairs_with_Smallest_SUm // Leetcode 373
         while (k > 0 && minheap.size() > 0) 
         {
             int data[] = minheap.poll();
-            int i = data[1];    
-            int j = data[2];
+            int row = data[1];    
+            int col = data[2];
 
-            result.add(Arrays.asList(nums1[i],nums2[j]));
+            result.add(Arrays.asList(nums1[row],nums2[col]));
             
-            if (j + 1 < nums2.length) 
+            if (col + 1 < nums2.length) 
             {
-                int sum = nums1[i]+nums2[j+1];
-                minheap.offer(new int[]{sum , i , j+1});
+                int sum = nums1[row]+nums2[col+1];
+                minheap.offer(new int[]{sum , row , col+1});
             }
             k--;
         }
 
         return result;
+        // TC: O(K log K)
+        // SC: O(K)
     }
 
     public static void main(String[] args) 

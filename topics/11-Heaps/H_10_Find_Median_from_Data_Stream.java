@@ -39,16 +39,12 @@ class MedianFinder
     }
 
     public double findMedian()
-    {
-        double r;
-        
+    {   
         if(maxheap.size() >  minheap.size())
         {
-            r = maxheap.peek();
+            return maxheap.peek();
         }
 
-        r = (maxheap.peek() + minheap.peek()) / 2;
-
-        return r;
+        return (maxheap.peek() + minheap.peek()) / 2.0;
     }
 }

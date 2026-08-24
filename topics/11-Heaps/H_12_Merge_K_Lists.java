@@ -2,7 +2,6 @@ import java.util.*;
 
 public class H_12_Merge_K_Lists //Leetcode 23
 {
-
     public ListNode mergeKLists_brute(ListNode[] lists)
     {
         List<Integer> values = new ArrayList<>();
@@ -27,6 +26,8 @@ public class H_12_Merge_K_Lists //Leetcode 23
         }
 
         return dummy.next;
+        // TC: O(N log N)
+        // SC: O(N)
     }
 
     
@@ -60,6 +61,8 @@ public class H_12_Merge_K_Lists //Leetcode 23
         }
         curr.next = null;
         return dummy.next;
+        // TC: O(N log K)
+        // SC: O(K)
     }
 
     public static void main(String[] args) 

@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 
-public class H_08_Minimum_Cost_Connect_Ropes
+public class H_08_Minimum_Cost_Connect_Ropes // Leetcode 1167
 {
     public static int Minimum_Cost_Connect(int nums[])
     {
