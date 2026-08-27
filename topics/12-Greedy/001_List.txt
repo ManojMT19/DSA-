@@ -1,0 +1,49 @@
+# 🎯 Greedy — Must-Do Problems 
+
+Greedy is high-yield for freshers — shows up often in service-based AND product-based fresher rounds, and it's usually **Easy-Medium**, so good ROI for your timeline.
+
+Pattern 1 — Interval Greedy (do in order — same core pattern)
+
+N Meetings in One Room (GfG) — foundational version
+LC 56 — Merge Intervals
+LC 435 — Non-overlapping Intervals
+LC 57 — Insert Interval
+Minimum Platforms Required (GfG) — two-pointer variant
+LC 452 — Minimum Arrows to Burst Balloons
+
+Pattern 2 — Sort + Simple Greedy
+
+LC 455 — Assign Cookies
+LC 860 — Lemonade Change
+Fractional Knapsack (GfG)
+Job Sequencing Problem (GfG)
+
+Pattern 3 — Jump Game / Reachability
+
+LC 55 — Jump Game
+LC 45 — Jump Game II
+
+Pattern 4 — Two-Pass / Prefix Greedy
+
+LC 134 — Gas Station
+LC 135 — Candy
+
+Pattern 5 — Greedy on Strings
+
+LC 763 — Partition Labels
+LC 678 — Valid Parenthesis String
+
+Pattern 6 — Greedy Profit
+
+LC 122 — Best Time to Buy/Sell Stock II
+LC 121 — Best Time to Buy/Sell Stock (base case, if not already done)
+
+Pattern 7 — Custom Comparator Greedy
+
+LC 179 — Largest Number
+LC 1710 — Maximum Units on a Truck
+
+## Quick tip going forward
+
+Greedy problems often don't have a "generic algorithm template" like heaps do (min-heap/max-heap pops) — the skill is **recognizing which greedy choice is provably safe** (usually provable via exchange argument or sorting intuition). When you solve each one, try to articulate **"why does the greedy choice work here, and why doesn't a smarter/lazier alternative beat it"** — that's exactly the kind of explanation interviewers probe for with greedy problems.
+
