@@ -27,6 +27,8 @@ public class H_08_Non_Overlapping_Intervals
             }
         }
         return result;
+        // TC = O(n log n)
+        // SC = O(1)
     }
 
     public static void main(String[] args)
