@@ -1,0 +1,98 @@
+🔴 Tier 1 — Core Recursion Mechanics (do these first, no skipping)
+
+Pattern 1 — Basic Recursion / Recurrence Building
+
+Factorial of a number
+Sum of first N natural numbers
+Print numbers 1 to N (and N to 1) using recursion
+Check if an array is sorted (recursive)
+Fibonacci number (recursive, then note why it's exponential)
+
+Goal here: get comfortable with base case + recursive call + "trust the function does its job on a smaller input." This is pure muscle memory before anything clever.
+
+Pattern 2 — Recursion on Arrays/Strings (Single Choice)
+6. Reverse a string/array using recursion
+7. Check if a string is a palindrome (recursive)
+8. Find the maximum/minimum in an array (recursive)
+9. Linear search using recursion
+
+🟡 Tier 2 — Backtracking Foundations (this is where real interview weight lives)
+
+Pattern 3 — Subsequence / Include-Exclude (the most important recursion pattern for interviews)
+10. Print all subsequences of a string/array
+11. Print all subsequences with sum = K (or count them)
+12. LC 78 — Subsets
+13. LC 90 — Subsets II (with duplicates)
+14. LC 39 — Combination Sum
+15. LC 40 — Combination Sum II
+
+This "take it or don't take it" skeleton is the single most reused recursion template in interviews — subsets, combinations, partitions, knapsack-style DP all trace back to this exact shape. Master this block before anything else in Tier 2/3.
+
+Pattern 4 — Permutations
+16. LC 46 — Permutations
+17. LC 47 — Permutations II (with duplicates)
+
+🟢 Tier 3 — Backtracking on Grids/Boards
+
+Pattern 5 — Grid/Board Backtracking
+18. LC 79 — Word Search
+19. Rat in a Maze (GfG)
+20. N-Queens (LC 51) — at least understand it, even if you don't drill it hard
+21. LC 37 — Sudoku Solver (lower priority — long, but same pattern as above, just bigger)
+
+🔵 Tier 4 — Recursion + Multiple Recursive Calls (branching)
+
+Pattern 6 — Divide and Branch
+22. Tower of Hanoi
+23. LC 22 — Generate Parentheses
+24. Josephus Problem (GfG) — classic recursion interview question
+
+⚪ Tier 5 — Recursion → DP Bridge (do only after the above is solid)
+
+Pattern 7 — Memoization Entry Point
+25. LC 509 — Fibonacci with memoization (see the O(2^n) → O(n) jump directly)
+26. LC 70 — Climbing Stairs
+27. 0/1 Knapsack (GfG) — recursive version first, memoize second
+
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+
+🔴 Tier 1 — Core Recursion Mechanics (no skipping)
+
+**Pattern 1 — Recursion as an implicit stack / math recursion**
+1. Recursive implementation of atoi()
+2. Pow(x, n) — optimize to O(log n) via fast exponentiation
+3. Count Good Numbers
+4. Sort a Stack using recursion
+5. Reverse a Stack using recursion
+
+Goal here: see recursion do something a loop can't easily do — manipulate a stack's order, or split a problem logarithmically. This builds the "recursion replaces an explicit data structure" intuition, not just base-case/recursive-call muscle memory.
+
+🟡 Tier 2 — Backtracking Foundations (this is where the real interview weight lives)
+
+**Pattern 2 — Subsequence / Include-Exclude (the single most reused recursion template)**
+6. Learn all patterns of subsequences (theory — do this before the problems below)
+7. Count all subsequences with sum K
+8. Check if there exists a subsequence with sum K
+9. Subsets I
+10. Subsets II (with duplicates)
+11. Combination Sum
+12. Combination Sum II
+13. Combination Sum III
+
+This "take it or don't take it" skeleton is what subsets, combinations, and partitions all trace back to. Master this block before moving to grid backtracking — everything below reuses this shape with extra constraints bolted on.
+
+**Pattern 3 — Building Strings via Choices**
+14. Letter Combinations of a Phone Number
+15. Generate Parentheses
+
+**Pattern 4 — Backtracking on Grids/Strings with Constraints**
+16. Palindrome Partitioning
+17. Word Search
+18. Rat in a Maze
+19. N-Queens
+20. M-Coloring Problem
+21. Word Break
+
+That's 21 questions, a bit more than the "16" I quoted earlier — your source list had a few extras (M-Coloring, Word Break, Palindrome Partitioning) folded into what I'd called Tier 1/2 before. This grouping is more accurate to what you actually listed. Sudoku Solver and Expression Add Operators still sit in Tier 3 if you want them later — same pattern as #16-21, just longer to implement.
