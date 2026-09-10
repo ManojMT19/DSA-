@@ -34,9 +34,9 @@ public class R_17_Count_All_Subsequences_Sum_K
             return (sum == target) ? 1 : 0;
         }
 
-        int take = count_subsequences_sum_K(nums, target, sum + nums[idx], idx+1);
+        int take = count_subsequences_sum_K(nums, target, sum + nums[idx], idx + 1);
 
-        int skip = count_subsequences_sum_K(nums, target, sum, idx+1);
+        int skip = count_subsequences_sum_K(nums, target, sum, idx + 1);
 
         return take + skip;
 
@@ -48,8 +48,8 @@ public class R_17_Count_All_Subsequences_Sum_K
 
     public static void main(String[] args)
     {
-        int  nums[] = {1,2,1,1};
-        int target = 3;
+        int  nums[] = {-1,1,2,3,4,6};
+        int target = 5;
 
         List<Integer> ans = new ArrayList<>();
         print_subsequences_sum_k(nums, target, 0, 0, ans);
