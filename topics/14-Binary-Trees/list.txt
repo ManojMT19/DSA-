@@ -1,0 +1,64 @@
+Here's the same set, reordered into a learning path that builds each concept on the previous one — good sequencing since you're starting trees from scratch.
+
+## Phase 1 — Foundations (get the traversal instinct first)
+1. Introduction to Trees
+2. Binary Tree Representation in Java
+3. Preorder Traversal (recursive)
+4. Inorder Traversal (recursive)
+5. Postorder Traversal (recursive)
+6. Level Order Traversal (BFS)
+
+*Why this order:* recursion on trees is 90% "do something before/between/after visiting children" — once preorder clicks, in/post are trivial variations. Level order introduces the queue-based mindset you'll need later for width/views.
+
+## Phase 2 — Iterative versions of the same traversals
+7. Iterative Preorder
+8. Iterative Inorder
+9. Postorder using 2 stacks
+10. Postorder using 1 stack
+11. Pre, In, Post in one single traversal
+
+*Why:* don't touch these until recursive traversals feel automatic — iterative postorder especially only makes sense once you've internalized the recursive call order.
+
+## Phase 3 — Core "properties of a tree" problems
+12. Maximum Depth
+13. Check for Balanced Binary Tree
+14. Diameter of Binary Tree
+15. Maximum Path Sum
+16. Check if Two Trees are Identical
+17. Symmetric Binary Tree
+
+*Why:* these are all "return a value computed from children" recursion patterns — same shape as maximum depth, increasing in cleverness. Symmetric/Identical fit here because they're a direct extension of "compare two trees."
+
+## Phase 4 — Traversal variants / views (all built on level order or preorder + coordinates)
+18. Zig-Zag / Spiral Traversal
+19. Boundary Traversal
+20. Vertical Order Traversal
+21. Top View
+22. Bottom View
+23. Right/Left View
+
+*Why grouped together:* they're really "level order or DFS + some bookkeeping (column index, first/last seen at a level)." Doing them back-to-back lets you see the shared trick instead of relearning it each time.
+
+## Phase 5 — Path & structural problems
+24. Print Root to Leaf Paths
+25. LCA in Binary Tree
+26. Maximum Width of Binary Tree
+27. Children Sum Property
+28. Nodes at Distance K from a Given Node
+29. Minimum Time to Burn the Tree from a Given Node
+
+*Why:* LCA is the key unlock — Distance-K and Burn-Tree both reduce to "find the node, then BFS outward using parent pointers," so LCA should come right before them.
+
+## Phase 6 — Construction & advanced traversal
+30. Count Nodes in a Complete Binary Tree
+31. Requirements to Construct a Unique Binary Tree
+32. Construct BT from Preorder + Inorder
+33. Construct BT from Postorder + Inorder
+34. Serialize and Deserialize a Binary Tree
+35. Morris Preorder Traversal
+36. Morris Inorder Traversal
+37. Flatten Binary Tree to Linked List
+
+*Why last:* construction problems need you to be fluent in traversal order semantics (which is exactly Phase 1), and Morris traversal is the "final boss" — it reuses the tree's own null pointers, which only makes sense once traversal is second nature.
+
+Your existing list didn't actually need much reshuffling — it's already close to the standard tree progression. The main tweaks: pulling Identical/Symmetric together, grouping all the "view" problems as one block, and putting LCA right before the two problems that depend on it.
