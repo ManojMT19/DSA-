@@ -30,7 +30,7 @@ public class T_08_Balanced_Binary_Tree
     }
 
     
-    public static boolean isBalanced(TreeNode root) 
+    public static boolean isBalanced_optimal(TreeNode root) 
     {
         return depth(root) != -1;
     }
@@ -46,7 +46,7 @@ public class T_08_Balanced_Binary_Tree
     
     public static boolean isBalanced_brute(TreeNode root) 
     {
-        if(root == null)return false;
+        if(root == null)return true;
 
         int left = maxDepth(root.left);
         int right = maxDepth(root.right);
