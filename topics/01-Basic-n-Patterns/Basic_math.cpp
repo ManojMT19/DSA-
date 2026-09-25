@@ -90,39 +90,52 @@ void prime_1(int n)
 {
     if (n == 1)
     {
-        cout << n << " is a prime no" << endl;
+        cout << n << " is a not a prime no" << endl;
+        return;
     }
-    else
+    if (n % 2 == 0)
     {
-        for (int i = 2; i < n; i++)
-        {
-            if (n % i == 0)
-            {
-                cout << n << " is not a prime no" << endl;
-                return;
-            }
-        }
         cout << n << " is a prime no" << endl;
+        return;
     }
-}
-void prime_2(int n)
-{
-    int count = 0;
-    for (int i = 1; i * i <= n; i++)
+
+    for (int i = 2; i < n; i++)
     {
         if (n % i == 0)
         {
-            count++;
-            if (n % i != i)
-            {
-                count++;
-            }
+            cout << n << " is not a prime no" << endl;
+            return;
         }
     }
-    if (count == 2)
-        cout << "Prime No";
-    else
-        cout << "Not a Prime No";
+    cout << n << " is a prime no" << endl;
+}
+void prime_2(int n)
+{
+    if (n == 1)
+    {
+        cout << "Not a prime no";
+        return;
+    }
+    if (n == 2)
+    {
+        cout << "prime no";
+        return;
+    }
+    if (n % 2 == 0) // even no
+    {
+        cout << "Not a prime no";
+        return;
+    }
+
+    for (int i = 3; i * i <= n; i++)
+    {
+        if (n % i == 0)
+        {
+            cout << "Not a prime no";
+            return;
+        }
+    }
+    cout << "Prime No";
 }
 int reverse_leetcode(int x)
 {
@@ -166,6 +179,6 @@ int GCD_2(int a, int b)
 }
 int main()
 {
-    
+
     return 0;
 }

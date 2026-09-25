@@ -73,6 +73,8 @@ public class SQ07_Trapping_Rainwater
         }
 
         return water;
+        // TC = O(n)
+        // SC = O(1)
     }
 
     public static void main(String[] args)

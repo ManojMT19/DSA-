@@ -19,6 +19,14 @@ public class SQ11_Remove_K_digits
                 count++;
 
                 i = Math.max(0, i - 1); // Very Important to check again after deleting that current element
+                // After deleting a digit, move one step back because a new "bad pair" might
+                // have been created.
+
+                // 1 2 3 1 3 2
+                // After deleting 3, the number becomes 12132. The new adjacent pair 2 > 1 is
+                // formed. If we don't move i back, we skip comparing 2 and 1, missing a
+                // necessary deletion and producing a larger number.
+
             } else
             {
                 // Only move forward if no deletion happened
