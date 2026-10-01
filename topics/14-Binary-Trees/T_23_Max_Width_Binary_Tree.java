@@ -62,7 +62,6 @@ public class T_23_Max_Width_Binary_Tree  // Leetcode 662
                 if(i == size - 1) last = cur_id;
 
                 if(node.left != null)q.offer(new Pair(node.left, 2*cur_id+1));
-
                 if(node.right != null)q.offer(new Pair(node.right, 2*cur_id+2));
             }
             ans = Math.max(ans , last - first + 1);
