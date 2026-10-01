@@ -2,7 +2,7 @@ import java.util.*;
 
 class TreeNode
 {
-    int data;
+    int val;
     TreeNode left;
     TreeNode right;
 
@@ -12,12 +12,12 @@ class TreeNode
 
     TreeNode(int val)
     {
-        this.data = val;
+        this.val = val;
     }
 
     TreeNode(int val, TreeNode left, TreeNode right)
     {
-        this.data = val;
+        this.val = val;
         this.left = left;
         this.right = right;
     }
@@ -37,7 +37,7 @@ public class T_21_Print_Root_to_Leaf_Path
         if (root == null)
             return;
 
-        current.add(root.data);
+        current.add(root.val);
 
         if (root.left == null && root.right == null)
         {

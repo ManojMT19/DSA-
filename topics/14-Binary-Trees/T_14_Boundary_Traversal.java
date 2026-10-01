@@ -3,7 +3,7 @@ import java.util.List;
 
 class TreeNode
 {
-    int data;
+    int val;
     TreeNode left;
     TreeNode right;
 
@@ -13,12 +13,12 @@ class TreeNode
 
     TreeNode(int val)
     {
-        this.data = val;
+        this.val = val;
     }
 
     TreeNode(int val, TreeNode left, TreeNode right)
     {
-        this.data = val;
+        this.val = val;
         this.left = left;
         this.right = right;
     }
@@ -40,7 +40,7 @@ public class T_14_Boundary_Traversal
         TreeNode cur = root.left;
         while(cur != null)
         {
-            if(isLeaf(cur) == false)res.add(cur.data);
+            if(isLeaf(cur) == false)res.add(cur.val);
             if(cur.left != null)cur = cur.left;
             else cur = cur.right;
         }
@@ -52,7 +52,7 @@ public class T_14_Boundary_Traversal
         ArrayList<Integer>temp = new ArrayList<>();
         while(cur != null)
         {
-            if(isLeaf(cur) == false)temp.add(cur.data);
+            if(isLeaf(cur) == false)temp.add(cur.val);
             if(cur.right != null)cur = cur.right;
             else cur = cur.left;
         }
@@ -66,7 +66,7 @@ public class T_14_Boundary_Traversal
     {
         if(isLeaf(root))
         {
-            res.add(root.data);
+            res.add(root.val);
             return ;
         }
         if (root.left != null) addLeaf(root.left, res);

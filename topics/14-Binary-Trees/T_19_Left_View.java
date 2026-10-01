@@ -2,7 +2,7 @@ import java.util.*;
 
 class TreeNode
 {
-    int data;
+    int val;
     TreeNode left;
     TreeNode right;
 
@@ -12,12 +12,12 @@ class TreeNode
 
     TreeNode(int val)
     {
-        this.data = val;
+        this.val = val;
     }
 
     TreeNode(int val, TreeNode left, TreeNode right)
     {
-        this.data = val;
+        this.val = val;
         this.left = left;
         this.right = right;
     }
@@ -31,7 +31,7 @@ public class T_19_Left_View
 
         if(level == ans.size())
         {
-            ans.add(root.data);
+            ans.add(root.val);
         }
         solve(root.left, ans, level+1);      // this is the only change between righht n left view in recursion 
         solve(root.right, ans, level+1);
@@ -67,7 +67,7 @@ public class T_19_Left_View
 
                 if (i == 0)
                 {
-                    map.add(node.data);
+                    map.add(node.val);
                 }
 
                 if (node.left != null)

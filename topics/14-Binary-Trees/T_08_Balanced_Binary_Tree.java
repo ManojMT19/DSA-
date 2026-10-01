@@ -1,15 +1,3 @@
-class TreeNode
-{
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int val)
-    {
-        this.val = val;
-    }
-} 
-
 public class T_08_Balanced_Binary_Tree
 {
     // if any one of the subtree unbalanced then whole tree is unbalanced

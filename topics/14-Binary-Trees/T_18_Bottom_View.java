@@ -2,7 +2,7 @@ import java.util.*;
 
 class TreeNode
 {
-    int data;
+    int val;
     TreeNode left;
     TreeNode right;
 
@@ -12,12 +12,12 @@ class TreeNode
 
     TreeNode(int val)
     {
-        this.data = val;
+        this.val = val;
     }
 
     TreeNode(int val, TreeNode left, TreeNode right)
     {
-        this.data = val;
+        this.val = val;
         this.left = left;
         this.right = right;
     }
@@ -57,7 +57,7 @@ public class T_18_Bottom_View
             TreeNode node = current.node;
             int hd = current.hd;
 
-            map.put(hd, node.data);
+            map.put(hd, node.val);
 
             if (node.left != null)
             {

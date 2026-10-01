@@ -1,29 +1,5 @@
 import java.util.*;
 
-class TreeNode
-{
-
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode()
-    {
-    }
-
-    TreeNode(int val)
-    {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right)
-    {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
-
 public class T_05_Level_Order // leetcode 102
 {
     public List<List<Integer>> levelOrder(TreeNode root)
@@ -46,7 +22,7 @@ public class T_05_Level_Order // leetcode 102
                 if (queue.peek().right != null)
                     queue.offer(queue.peek().right);
 
-                sublist.add(queue.poll().val);
+                sublist.add(queue.poll().data);
             }
             ans.add(sublist);
         }

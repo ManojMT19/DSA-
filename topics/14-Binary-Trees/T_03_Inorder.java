@@ -1,17 +1,5 @@
 import  java.util.*;
 
-class TreeNode
-{
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int val)
-    {
-        this.val = val;
-    }
-}
-
 public class T_03_Inorder
 {
     public List<Integer> InorderTraversal(TreeNode root) 
@@ -27,7 +15,7 @@ public class T_03_Inorder
         if(node == null)return ;
 
         inorder(node.left, ans);
-        ans.add(node.val);
+        ans.add(node.data);
         inorder(node.right, ans);
     } 
 

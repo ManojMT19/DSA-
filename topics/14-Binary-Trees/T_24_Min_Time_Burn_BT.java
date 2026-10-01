@@ -1,7 +1,28 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
 
-public class T_24_Distance_K // Leetcode 863
+public class T_24_Min_Time_Burn_BT  // Leetcode 2385
 {
+    public static TreeNode findStart(TreeNode root, int start)
+    {
+        if (root == null)
+            return null;
+
+        if (root.val == start)
+            return root;
+
+        TreeNode left = findStart(root.left, start);
+
+        if (left != null)
+            return left;
+
+        TreeNode right = findStart(root.right, start);
+
+        return right;
+    }
+
     public static void marking_parent(TreeNode root, Map<TreeNode, TreeNode> parent_map)
     {
         Queue<TreeNode> q = new LinkedList<TreeNode>();
@@ -10,7 +31,7 @@ public class T_24_Distance_K // Leetcode 863
         while (!q.isEmpty())
         {
             int size = q.size();
-            
+
             for (int i = 0; i < size; i++)
             {
                 TreeNode current = q.poll();
@@ -29,32 +50,27 @@ public class T_24_Distance_K // Leetcode 863
         }
     }
 
-    public static List<Integer> distanceK(TreeNode root, TreeNode target, int k)
+    public static int min_time_to_Burn(TreeNode root, TreeNode starting_node)
     {
-        Map<TreeNode, TreeNode> parent_map = new HashMap<>();
-        marking_parent(root, parent_map);
+        int min = 0;
+
+        Map<TreeNode, TreeNode> parents = new HashMap<>();
+        marking_parent(root, parents);
 
         HashMap<TreeNode, Boolean> visited = new HashMap<>();
 
-        Queue<TreeNode> q = new LinkedList<TreeNode>();
-        q.offer(target);
-        visited.put(target, true);
-        int curr_level = 0;
+        Queue<TreeNode> q = new LinkedList<>();
+
+        q.offer(starting_node);
+        visited.put(starting_node, true);
 
         while (!q.isEmpty())
         {
             int size = q.size();
 
-            if (curr_level == k)
-                break;
-
-            curr_level++;
-
             for (int i = 0; i < size; i++)
             {
                 TreeNode current = q.poll();
-
-                // if (current.left != null && !visited.containsKey(current.left))  // this is also correct bcz we never insert with false condition then all existing nodes r true so checking existing also works 
 
                 if (current.left != null && visited.get(current.left) == null)
                 {
@@ -68,23 +84,28 @@ public class T_24_Distance_K // Leetcode 863
                     q.offer(current.right);
                 }
 
-                if (parent_map.get(current) != null && visited.get(parent_map.get(current)) == null)
+                if (parents.get(current) != null && visited.get(parents.get(current)) == null)
                 {
-                    q.offer(parent_map.get(current));
-                    visited.put(parent_map.get(current), true);
+                    visited.put(parents.get(current), true);
+                    q.offer(parents.get(current));
                 }
+            }
+
+            if(!q.isEmpty())
+            {
+                min++;
             }
         }
 
-        List<Integer> ans = new ArrayList<>();
-        while (!q.isEmpty())
-        {
-            TreeNode current = q.poll();
-            ans.add(current.val);
-        }
-        return ans;
+        return min;
     }
 
-    // TC = O(n)
-    // SC = O(n)
+    public static int amountOfTime(TreeNode root, int start) 
+    {
+        TreeNode starting_node = findStart(root, start);
+
+        int ans = min_time_to_Burn(root, starting_node);
+
+        return ans;
+    }
 }

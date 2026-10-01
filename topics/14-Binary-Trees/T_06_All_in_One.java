@@ -1,29 +1,5 @@
 import java.util.*;
 
-class TreeNode
-{
-
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode()
-    {
-    }
-
-    TreeNode(int val)
-    {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right)
-    {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
-
 class Pair
 {
     TreeNode node;
@@ -54,7 +30,7 @@ public class T_06_All_in_One
 
             if(it.num == 1)
             {
-                pre.add(it.node.val);
+                pre.add(it.node.data);
                 it.num++;
                 st.push(it);
 
@@ -66,7 +42,7 @@ public class T_06_All_in_One
 
             else if(it.num == 2)
             {
-                in.add(it.node.val);
+                in.add(it.node.data);
                 it.num++;
                 st.push(it); 
 
@@ -78,7 +54,7 @@ public class T_06_All_in_One
  
             else
             {
-                post.add(it.node.val);
+                post.add(it.node.data);
             }
         }
 

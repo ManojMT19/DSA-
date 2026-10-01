@@ -1,17 +1,5 @@
 import  java.util.*;
 
-class TreeNode
-{
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int val)
-    {
-        this.val = val;
-    }
-}
-
 public class T_04_PostOrder
 {
     public List<Integer> postorderTraversal(TreeNode root) 
@@ -28,7 +16,7 @@ public class T_04_PostOrder
 
         postorder(node.left, ans);
         postorder(node.right, ans);
-        ans.add(node.val);
+        ans.add(node.data);
     } 
 
     public static void main(String[] args)
