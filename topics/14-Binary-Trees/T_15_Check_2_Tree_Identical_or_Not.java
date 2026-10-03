@@ -1,28 +1,5 @@
 import java.util.ArrayList;
 
-class TreeNode
-{
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode()
-    {
-    }
-
-    TreeNode(int val)
-    {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right)
-    {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
-
 public class T_15_Check_2_Tree_Identical_or_Not // Leetcode 100
 {
 

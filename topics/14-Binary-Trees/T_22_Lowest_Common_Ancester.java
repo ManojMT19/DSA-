@@ -1,29 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class TreeNode
-{
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode()
-    {
-    }
-
-    TreeNode(int val)
-    {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right)
-    {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
-
 public class T_22_Lowest_Common_Ancester // Leetcode 236
 {
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) // worst problem didnt understand
