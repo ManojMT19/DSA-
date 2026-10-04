@@ -1,5 +1,28 @@
 import java.util.*;
 
+class TreeNode
+{
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode()
+    {
+    }
+
+    TreeNode(int val)
+    {
+        this.val = val;
+    }
+
+    TreeNode(int val, TreeNode left, TreeNode right)
+    {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+
 class Pair
 {
     TreeNode node;
@@ -22,39 +45,40 @@ public class T_06_All_in_One
         List<Integer> in = new ArrayList<>();
         List<Integer> post = new ArrayList<>();
 
-        if(root == null)return ;
+        if (root == null)
+            return;
 
-        while (!st.isEmpty()) 
+        while (!st.isEmpty())
         {
-            Pair it = st.pop();    
+            Pair it = st.pop();
 
-            if(it.num == 1)
+            if (it.num == 1)
             {
-                pre.add(it.node.data);
+                pre.add(it.node.val);
                 it.num++;
                 st.push(it);
 
-                if(it.node.left != null)
+                if (it.node.left != null)
                 {
                     st.push(new Pair(it.node.left, 1));
                 }
             }
 
-            else if(it.num == 2)
+            else if (it.num == 2)
             {
-                in.add(it.node.data);
+                in.add(it.node.val);
                 it.num++;
-                st.push(it); 
+                st.push(it);
 
-                if(it.node.right != null)
+                if (it.node.right != null)
                 {
                     st.push(new Pair(it.node.right, 1));
                 }
             }
- 
+
             else
             {
-                post.add(it.node.data);
+                post.add(it.node.val);
             }
         }
 
