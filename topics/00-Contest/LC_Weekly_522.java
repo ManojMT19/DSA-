@@ -19,6 +19,53 @@ public class LC_Weekly_522
         return total;
     }
 
+        public static long maxAlternatingSum(int[] nums) // this is correct but TLE
+    {
+        long maxx = Integer.MIN_VALUE;
+
+        for (int i : nums)
+        {
+            if (i > maxx)
+                maxx = i;
+        }
+
+        long temp = 0;
+        for (int i = 0; i < nums.length; i++)
+        {
+            if (i % 2 == 0)
+            {
+                temp += nums[i];
+            } else
+            {
+                temp -= nums[i];
+            }
+        }
+
+        if (temp > maxx)
+            maxx = temp;
+
+        int j = 0;
+        while (j < nums.length)
+        {
+            long ex = 0;
+            for (int i = 0; i < nums.length; i++)
+            {
+                if(i == j)continue;
+
+                if (i % 2 == 0)
+                {
+                    ex += nums[i];
+                } else
+                {
+                    ex -= nums[i];
+                }
+            }
+            j = j + 1;
+            if(ex > maxx)maxx = ex;
+        }
+        return maxx;
+    }
+
     public static void main(String[] args)
     {
         String s = "0192837465";
