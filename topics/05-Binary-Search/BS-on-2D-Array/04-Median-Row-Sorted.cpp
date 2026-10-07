@@ -22,6 +22,8 @@ int count_lesser(vector<int>& row, int mid)
 }
 int row_sorted_median_optimal(vector<vector<int>>&mat)//I didnt understand
 {
+    // Binary search possible values, and for every guessed value count how many matrix elements are ≤ it using binary search on each sorted row.
+    
     int rows = mat.size();
     int col = mat[0].size();
 

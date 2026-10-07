@@ -54,6 +54,18 @@ bool searchMatrix_binary(vector<vector<int>>& matrix, int target)
     //TC = O(n*log m)
     //SC = O(1)
 }
+
+/*
+    Very Important Math technique
+
+    1D Array to 2D Array :
+        row = index / n
+        col = index % n
+
+    2D Array to 1D Array:
+        index = row * m + col;
+*/
+
 bool searchMatrix_optimal(vector<vector<int>>& matrix, int target) //Leetcode 74
 {
     if (matrix.empty() || matrix[0].empty())
@@ -86,7 +98,7 @@ bool searchMatrix_optimal(vector<vector<int>>& matrix, int target) //Leetcode 74
     //TC = O(log(n*m))
     //SC = O(1)
 }
-bool searchMatrix_opt(vector<vector<int>>& matrix, int target)
+bool searchMatrix_opt(vector<vector<int>>& matrix, int target) // Leetcode 240
 {
     int n = matrix.size();
     int m = matrix[0].size();

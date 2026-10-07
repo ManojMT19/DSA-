@@ -2,7 +2,7 @@
 using namespace std;
 vector<int> find_Peak_Grid_brute(vector<vector<int>> &matrix)
 {
-    int maaxx = 0;
+    int maaxx = INT_MIN;
     vector<int> index;
     for (int i = 0; i < matrix.size(); i++)
     {
