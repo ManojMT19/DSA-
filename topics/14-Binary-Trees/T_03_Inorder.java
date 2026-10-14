@@ -15,7 +15,7 @@ public class T_03_Inorder
         if(node == null)return ;
 
         inorder(node.left, ans);
-        ans.add(node.data);
+        ans.add(node.val);
         inorder(node.right, ans);
     } 
 

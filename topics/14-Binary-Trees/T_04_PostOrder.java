@@ -16,7 +16,7 @@ public class T_04_PostOrder
 
         postorder(node.left, ans);
         postorder(node.right, ans);
-        ans.add(node.data);
+        ans.add(node.val);
     } 
 
     public static void main(String[] args)

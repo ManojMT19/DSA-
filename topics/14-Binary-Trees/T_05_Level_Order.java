@@ -14,7 +14,7 @@ public class T_05_Level_Order // leetcode 102
         while (!queue.isEmpty())
         {
             int size = queue.size();
-            List<Integer> sublist = new LinkedList<Integer>();
+            List<Integer> sublist = new LinkedList<Integer>(); 
             for (int i = 0; i < size; i++)
             {
                 if (queue.peek().left != null)
@@ -22,7 +22,7 @@ public class T_05_Level_Order // leetcode 102
                 if (queue.peek().right != null)
                     queue.offer(queue.peek().right);
 
-                sublist.add(queue.poll().data);
+                sublist.add(queue.poll().val);
             }
             ans.add(sublist);
         }

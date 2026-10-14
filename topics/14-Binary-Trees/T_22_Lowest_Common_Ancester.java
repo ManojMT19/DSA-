@@ -29,6 +29,9 @@ public class T_22_Lowest_Common_Ancester // Leetcode 236
         {
             return root;
         }
+        
+        // Time Complexity: O(n)
+        // Space Complexity: (O(h), where h is the height of the tree.
 
     }
 
