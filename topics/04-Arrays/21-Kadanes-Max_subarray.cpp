@@ -15,23 +15,55 @@ int maxAbsoluteSum_brute(vector<int> &nums) // Leetcode 1749
     }
     return maxi;
 }
-long long maxsumarray_kadanes(vector<int> arr) // this is the original Kadanes Algorithm not Leetcode solution
+
+int kadane(vector<int> &nums) // this is the original Kadanes Algorithm not Leetcode solution
 {
-    int n = arr.size();
-    long long sum = 0, maxi = LONG_LONG_MIN;
-    for (int i = 0; i < n; i++)
+    int n = nums.size();
+
+    int currentSum = nums[0];
+    int maxSum = nums[0];
+
+    for (int i = 1; i < n; i++)
     {
-        sum += arr[i];
-        maxi = max(maxi,sum); 
-        if (sum < 0)
-            sum = 0;
+        currentSum = max(nums[i], currentSum + nums[i]);
+        maxSum = max(maxSum, currentSum);
     }
-    // To consider the sum of the empty subarray
-    // uncomment the following check:
-    // if (maxi < 0) maxi = 0;
-    return maxi;
+
+    return maxSum;
 }
-int maxAbsoluteSum_optimal_kadanes(vector<int> &nums)  
+
+/*
+
+Kadane’s Algorithm finds the maximum sum of any contiguous subarray in \\(O(n)\\) time and \\(O(1)\\) extra space.
+
+### The core idea
+
+At every element, decide between two choices:
+
+1. Extend the previous subarray by adding the current element.
+2. Start a new subarray from the current element.
+
+Choose whichever gives the larger sum.
+
+currentSum = max(nums[i], currentSum + nums[i])
+
+Keep updating the maximum sum found so far.
+
+### Example
+
+nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+The maximum-sum subarray is [4, -1, 2, 1].
+
+Its sum is 4-1+2+1=6.
+
+Remember: At each element, decide whether to continue the existing subarray or discard it and start fresh.
+
+For LC 1749, we adapt this idea to find both the maximum and minimum subarray sums, then take the larger absolute value.
+
+*/
+
+int maxAbsoluteSum_optimal_kadanes(vector<int> &nums)
 {
     int n = nums.size();
     int maxsum = 0, maxi = INT_MIN;
@@ -46,7 +78,7 @@ int maxAbsoluteSum_optimal_kadanes(vector<int> &nums)
     for (int i = 0; i < n; i++)
     {
         minsum += nums[i];
-        mini = min(mini, minsum);                       
+        mini = min(mini, minsum);
         if (minsum > 0)
             minsum = 0;
     }
@@ -56,7 +88,7 @@ int main()
 {
     vector<int> v{2, -5, 1, -4, 3, -2};
     // cout << maxAbsoluteSum_optimal_kadanes(v);
-    cout << maxsumarray_kadanes(v);
+    cout << kadane(v);
 
     return 0;
 }

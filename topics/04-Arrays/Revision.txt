@@ -1,0 +1,5 @@
+Kadane: drop the running sum when it goes negative, track the best. Trap: all-negative arrays.
+
+Dutch flag: three pointers (low, mid, high), swap 0s to the front and 2s to the back.
+
+Moore’s voting: keep a candidate and a count, and cancel pairs of different elements.
