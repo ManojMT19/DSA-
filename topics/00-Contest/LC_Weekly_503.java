@@ -4,29 +4,32 @@ public class LC_Weekly_503
 {
     public int[] limitOccurrences(int[] nums, int k) 
     {
-        HashMap<Integer , Integer> map = new HashMap<>();
-
+        HashMap<Integer, Integer> map = new HashMap<>();
+    
+        int[] result = new int[nums.length];
+        int j = 0;
+    
         for (int i = 0; i < nums.length; i++)
         {
-            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
-        }
-
-        for (int n : map.keySet()) 
-        {
-            if(map.get(n) > k)
+            int count = map.getOrDefault(nums[i], 0);
+    
+            if (count < k)
             {
-                map.put(n, k);
+                result[j] = nums[i];
+                j++;
+                map.put(nums[i], count + 1);
             }
         }
-
-        for(int i = 0 ; i < nums.length ; i++)
+    
+        int[] finalArr = new int[j];
+        for (int i = 0; i < j; i++)
         {
-            nums[i] = map.get(key);
+            finalArr[i] = result[i];
         }
-
-        return nums;
-        
+    
+        return finalArr;
     }
+    
     public int passwordStrength(String password)
     {
         int upper = 0;
