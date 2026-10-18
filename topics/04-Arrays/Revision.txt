@@ -3,3 +3,9 @@ Kadane: drop the running sum when it goes negative, track the best. Trap: all-ne
 Dutch flag: three pointers (low, mid, high), swap 0s to the front and 2s to the back.
 
 Moore’s voting: keep a candidate and a count, and cancel pairs of different elements.
+
+Rearrange: Separate positive and negative elements into two arrays, alternate them while both exist, then append the remaining elements starting at index 2 × min(positive count, negative count).
+
+Leader: Traverse from right to left, maintain the maximum seen so far, collect elements that qualify as leaders, then reverse the answer to restore original order.
+
+Longest Consecutive Sequence : Use a HashSet for O(1) average lookups, and extend a sequence only when num - 1 is absent. This avoids repeatedly counting the same sequence from its middle elements.
