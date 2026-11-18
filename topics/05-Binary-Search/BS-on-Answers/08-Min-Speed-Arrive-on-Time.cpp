@@ -18,7 +18,7 @@ bool func(vector<int>&dist , double hour , long long mid)
     }
     return time <= hour;
 }
-int minSpeedOnTime(vector<int> &dist, double hour)
+int minSpeedOnTime(vector<int> &dist, double hour) // LC 1870
 {
     if(hour <= (double)dist.size() - 1)
         return -1;
