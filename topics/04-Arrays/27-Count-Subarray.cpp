@@ -24,6 +24,9 @@ int count_subarray_optimal(vector<int> &a, int k) // Prefix sum method -- Refer 
 {
     // In Question 18 we return length the longest subarray length with sum = k
     // In this question we return Count how many subarrays have sum = k
+
+    // Required previous prefix sum = current prefix sum - k
+    
     unordered_map<int, int> mpp;
     mpp[0] = 1;  // Very important
     int presum = 0, count = 0;

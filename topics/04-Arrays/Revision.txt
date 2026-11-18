@@ -9,3 +9,13 @@ Rearrange: Separate positive and negative elements into two arrays, alternate th
 Leader: Traverse from right to left, maintain the maximum seen so far, collect elements that qualify as leaders, then reverse the answer to restore original order.
 
 Longest Consecutive Sequence : Use a HashSet for O(1) average lookups, and extend a sequence only when num - 1 is absent. This avoids repeatedly counting the same sequence from its middle elements.
+
+Prefix Sum + HashMap frequency: For each element, update prefixSum, add the frequency of prefixSum - k to the answer, then increment the frequency of prefixSum. Initialize the map with {0=1} to handle subarrays starting at index 0.
+
+For elements occurring more than (n/k) times, at most \(k-1\) candidates can qualify. Use extended Boyer–Moore voting to find candidates, then verify their actual frequencies in a second pass.
+
+3 n 4 Sum : Fix one element, calculate the required third value using -(nums[i] + nums[j]), search previously seen elements with a HashSet, and sort each valid triplet before inserting it into a set to remove duplicates
+
+Sort → fix one element → use two pointers → move pointers based on the sum → skip duplicates.
+
+Sort intervals by start time → compare each interval with the last merged interval → merge if currentStart <= lastEnd, otherwise add a new interval.

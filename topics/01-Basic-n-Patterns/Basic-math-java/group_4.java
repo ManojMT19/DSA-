@@ -40,8 +40,10 @@ public class group_4
         // if base = 2 , n = 3
         // 2^3
 
-        if (n <= 0)
+        if (base <= 1 || n < 1)
+        {
             return false;
+        }
 
         while (n % base == 0)
         {
@@ -100,23 +102,23 @@ public class group_4
     {
         long result = 1 % m; // if m is 1, everything is 0
         a = ((a % m) + m) % m; // make a fit inside 0..m-1, even if negative
-    /*
-        The problem: in Java, % can return a negative result.
-
-        7 % 5  =  2
-        -2 % 7  = -2     ← not 5, as you might expect
-
-        For modular arithmetic, we want the answer to always be between 0 and m - 1. In that world -2 and 5 are the same value when m = 7, because they differ by exactly 7.
-
-        Walk through the line with a = -2, m = 7:
-
-        a % m        = -2 % 7  = -2     (still negative)
-        + m          = -2 + 7  = 5      (now positive)
-        % m          = 5 % 7   = 5      (already in range, stays 5)
-
-        So -2 becomes 5.
-
-    */
+        /*
+         * The problem: in Java, % can return a negative result.
+         * 
+         * 7 % 5 = 2 -2 % 7 = -2 ← not 5, as you might expect
+         * 
+         * For modular arithmetic, we want the answer to always be between 0 and m - 1.
+         * In that world -2 and 5 are the same value when m = 7, because they differ by
+         * exactly 7.
+         * 
+         * Walk through the line with a = -2, m = 7:
+         * 
+         * a % m = -2 % 7 = -2 (still negative) + m = -2 + 7 = 5 (now positive) % m = 5
+         * % 7 = 5 (already in range, stays 5)
+         * 
+         * So -2 becomes 5.
+         * 
+         */
 
         while (b > 0)
         {

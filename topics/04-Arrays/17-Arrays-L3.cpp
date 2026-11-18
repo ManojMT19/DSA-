@@ -155,8 +155,7 @@ vector<int> singleNumber(vector<int> &nums)
 int findDuplicate(vector<int> &nums) // Leetcode 287
 {
     int n = nums.size();
-    int m = *max_element(nums.begin(), nums.end());
-    vector<int> hash(m + 1);
+    vector<int> hash(n + 1);
     int answer;
     for (int i = 0; i < n; i++)
     {

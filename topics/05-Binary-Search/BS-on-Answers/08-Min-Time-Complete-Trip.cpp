@@ -9,7 +9,7 @@ bool fun(vector<int>&time , int totaltrips , int mid)
     }
     return actual_trips >= totaltrips;
 }
-long long minimumTime(vector<int> &time, int totalTrips)
+long long minimumTime(vector<int> &time, int totalTrips) // LC 2187
 {
     int low = 1;
     int fastest = *min_element(time.begin() , time.end()); 

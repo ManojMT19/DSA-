@@ -18,13 +18,12 @@ int pascal_type_1_Extreme_Brute_nCr(int r ,int c)
     int ans = n / (rr * nr);
     return ans;
 }
-int pascal_type_1_Brute_nCr(int n ,int r) 
+int pascal_type_1_Brute_nCr(int row ,int col) 
 {
     long long res = 1;  
-    for (int i = 0; i < r; i++)
+    for (int i = 0; i < col; i++)
     {
-        res = res * (n-i);
-        res = res / (i+1);
+        res = (res * (row - i)) / (i + 1);
     }
     return res;
 }
@@ -34,7 +33,7 @@ void pascal_type_2_brute(int n)
 {
     for (int i = 0; i < n; i++)
     {
-        cout << pascal_type_1_Brute_nCr(5 , i) << " ";
+        cout << pascal_type_1_Brute_nCr(5 , i) << " ";         
     }
 }
 void pascal_type_2_better(int n)

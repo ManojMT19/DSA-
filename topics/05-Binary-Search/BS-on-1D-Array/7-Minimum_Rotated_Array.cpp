@@ -32,7 +32,7 @@ int minimum(vector<int> &arr) // Leetcode 153 & 154
         }
     }
     return ans;
-    //TC = O(n)
+    //TC = O(log n)
     //SC = O(1)
 }
 int findMin(vector<int> &nums)  // Better soln 
@@ -59,7 +59,7 @@ int findMin(vector<int> &nums)  // Better soln
     }
 
     return nums[low];
-    //TC = O(n)
+    //TC = O(log n)
     //SC = O(1)
 }
 int main()

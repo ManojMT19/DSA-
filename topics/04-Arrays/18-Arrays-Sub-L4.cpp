@@ -21,6 +21,9 @@ void longest_subarray_brute(vector<int> a, int k)
 //⬇️⬇️This is called prefix sum method
 int longsubarraywithsum_k_better(vector<int> a, long long k) //This works for both positive and negative 
 {
+
+    // Required previous prefix sum = current prefix sum - k
+
     unordered_map<long long, int> premap;
     long long sum = 0;
     int maxlen = 0;
